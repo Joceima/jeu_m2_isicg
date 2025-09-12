@@ -23,7 +23,13 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>(); // on r�cup�re dans la hi�rachie le rigid body
-        playerCamera = transform.Find("Camera");
+        playerCamera = transform.Find("PlayerCamera");
+    }
+
+    bool isGrounded()
+    {
+        LayerMask groundLayer = LayerMask.GetMask("Ground");  
+        return Physics.Raycast(transform.position, - transform.up.normalized, 1.1f, groundLayer);
     }
 
     // Update is called once per frame
