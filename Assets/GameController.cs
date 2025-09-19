@@ -13,13 +13,16 @@ public class GameController : MonoBehaviour
     public float timeLimit = 2.0f;
 
     int gameState = 0; // 0 en cours, 1 gagné, 2 fin de jeu
+
     
+
     void Start()
     {
         spawnTarget = GetComponent<SpawnTarget>();
         spawnTarget.SpawnSomeTargets(10);
         gameState = 0;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -39,6 +42,10 @@ public class GameController : MonoBehaviour
                 spawnTarget.SpawnSomeTargets(10);
             }
         }
-        
+
+
+
+
+
     }
 }

@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] int moveSpeed = 10;
     [SerializeField] int lookSpeed = 10;
     [SerializeField] int jumpSpeed = 10;
+    [SerializeField] Vector3 moveDirection;
 
     int mouseSensivity = 10;
 
@@ -18,12 +19,22 @@ public class CharacterMovement : MonoBehaviour
 
     float xRotation = 0.0f;
 
+    //animation
+    Animator animatorController;
+    bool isWalking = false;
+    Vector3 lastPosition;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>(); // on r�cup�re dans la hi�rachie le rigid body
         playerCamera = transform.Find("PlayerCamera");
+
+
+        animatorController = GetComponent<Animator>();
+        lastPosition = transform.position;
+
     }
 
     bool isGrounded()
@@ -37,6 +48,23 @@ public class CharacterMovement : MonoBehaviour
     {
         TransformMovement();
         FirstPersonLook();
+
+
+       /* float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical"); 
+        moveDirection = new Vector3(horizontal, 0, vertical).normalized;
+
+        if(moveDirection == Vector3.zero)
+        {
+            animatorController.SetFloat("Vitesse", 0.0f);
+
+        }
+        else
+        {
+            animatorController.SetFloat("Vitesse", 0.1f);
+        }
+        */
+
     }
 
     void TransformMovement()
@@ -83,6 +111,15 @@ public class CharacterMovement : MonoBehaviour
     void OnMove(InputValue inputValue)
     {
         moveInput = inputValue.Get<Vector2>();
+        if(moveInput == Vector2.zero)
+        {
+            animatorController.SetFloat("Vitesse", 0.0f);
+        }
+        else
+        {
+            animatorController.SetFloat("Vitesse", 1.0f);
+        }
+       
 
     }
 }
