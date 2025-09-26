@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class GameController : MonoBehaviour
     SpawnTarget spawnTarget;
 
     public int score = 0; // ou créer des getter ou setter 
+
+    [SerializeField] TMP_Text pauseText;
 
     int currentTargetNumber = 0;
 
@@ -21,6 +24,7 @@ public class GameController : MonoBehaviour
         spawnTarget = GetComponent<SpawnTarget>();
         spawnTarget.SpawnSomeTargets(10);
         gameState = 0;
+        pauseText.text = "En cours...";
     }
 
 
