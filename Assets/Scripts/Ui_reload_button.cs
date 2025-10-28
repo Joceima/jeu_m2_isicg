@@ -6,12 +6,12 @@ public class Ui_reload_button : MonoBehaviour, IPointerDownHandler
 {
    public void OnPointerDown(PointerEventData eventData)
     {
-        //UI.instance.reloadSteps--;
-        /*if (UI.instance.reloadSteps == 0)
+        if(UI.instance != null)
         {
-            // All steps completed
-            Debug.Log("Reload complete!");
-        }*/
+            UI.instance.ButtonClicked();
+        }
         gameObject.SetActive(false);
     }
+
+
 }

@@ -47,6 +47,9 @@ public class UI : MonoBehaviour
 
     public void OpenReloadUI()
     {
+        if(qteActive) {
+            return; // Ne pas ouvrir une nouvelle QTE si une est déjà active
+        }
         foreach (Ui_reload_button button in reloadButtons)
         {
             button.gameObject.SetActive(true);
@@ -64,6 +67,7 @@ public class UI : MonoBehaviour
      
     public void ButtonClicked()
     {
+        Debug.Log($"Bouton cliqué ! Étapes restantes : {reloadSteps - 1}");
         reloadSteps--;
 
         if (reloadSteps <= 0 && qteActive)
