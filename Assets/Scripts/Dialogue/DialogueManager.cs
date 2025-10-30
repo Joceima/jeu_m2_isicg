@@ -1,71 +1,86 @@
 using UnityEngine;
 using Ink.Runtime;
+using TMPro;
+using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("Ink Story")]
 
-    [SerializeField] private TextAsset inkJson;
+    private static DialogueManager instance;
+    [Header("Ink Story")]
+    
+
+    [Header("Dialogue UI Elements")]
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private TextMeshProUGUI dialogueText;
 
     private Story story;
 
-    private bool dialoguePlaying = false;
+    private bool dialogueIsPlaying = false;
 
     private void Awake()
     {
-        story = new Story(inkJson.text);
-    }
-    private void OnEnable()
-    {
-        GameEventsManager.instance.dialogueEvents.onEnterDialogue += EnterDialogue;
-
-    }
-
-    private void OnDisable()
-    {
-        GameEventsManager.instance.dialogueEvents.onEnterDialogue -= EnterDialogue;
-    }
-    
-    private void EnterDialogue(string knotName)
-    {
-        if (dialoguePlaying) // on entre dans le dialogue une fois 
+        if(instance != null)
         {
-            return;
+            Debug.Log("Found more than on Dialogue Manager in the scene");
         }
-        dialoguePlaying = true;
-        if (!knotName.Equals(""))
+        instance = this;
+    }
+
+    private void Start()
+    {
+        dialogueIsPlaying = false;
+        dialoguePanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (!dialogueIsPlaying)
         {
-            story.ChoosePathString(knotName);
+            return; 
+        }
+
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        { 
+            ContinueStory();
+        }
+    }
+
+    public static DialogueManager GetInstance()
+    {
+        return instance;
+    }
+
+
+    public void EnterDialogueMode(TextAsset inkJSON)
+    {
+        if (dialoguePanel == null)
+            Debug.LogError("dialoguePanel is null!");
+        else
+            dialoguePanel.SetActive(true);
+        story = new Story(inkJSON.text);
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+
+        ContinueStory();
+    }
+
+    private void ExitDialogueMode()
+    {
+        dialogueIsPlaying = false;
+        dialoguePanel.SetActive(false);
+        dialogueText.text = "";
+    }
+
+    private void ContinueStory()
+    {
+        if (story.canContinue)
+        {
+            dialogueText.text = story.Continue();
         }
         else
         {
-            Debug.Log("Knot name was the empty string when entering dialogue");
+            ExitDialogueMode();
         }
-
-        ContinueOrExitStory();
-    }
-
-    private void ContinueOrExitStory()
-    {
-        if(story.canContinue)
-        {
-            string dialogueLine = story.Continue();
-            Debug.Log(dialogueLine);
-       
-        }
-        else
-        {
-            ExitDialogue();
-            Debug.Log("Dialogue ended.");
-            
-        }
-    }
-
-    private void ExitDialogue()
-    {
-         Debug.Log("Exiting dialogue...");
-        dialoguePlaying = false;
-
-        story.ResetState();
     }
 }

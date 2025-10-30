@@ -45,15 +45,17 @@ public class InkTriggers : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Update InkTriggers playerInranger" + playerInRange);
+        //Debug.Log("Update InkTriggers playerInranger" + playerInRange);
         if (playerInRange)
         {
-            Debug.Log("Player in range - showing visual cue");
+            //Debug.Log("Player in range - showing visual cue");
             TextMeshVisualCue.gameObject.SetActive(true);
             if(Keyboard.current.eKey.wasPressedThisFrame)
             {
-                Debug.Log("E key pressed - Starting Ink story");
-                Debug.Log(inkJSON.text);
+                //Debug.Log("E key pressed - Starting Ink story");
+                //Debug.Log(inkJSON.text);
+                Debug.Log("Starting dialogue with InkTriggers");
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
         }
         else
