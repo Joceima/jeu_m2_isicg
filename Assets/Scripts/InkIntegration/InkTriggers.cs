@@ -46,7 +46,7 @@ public class InkTriggers : MonoBehaviour
     private void Update()
     {
         //Debug.Log("Update InkTriggers playerInranger" + playerInRange);
-        if (playerInRange)
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying) // si le joueur est dans la zone et qu'aucun dialogue n'est en cours
         {
             //Debug.Log("Player in range - showing visual cue");
             TextMeshVisualCue.gameObject.SetActive(true);

@@ -46,6 +46,10 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(DialogueManager.GetInstance().dialogueIsPlaying) // si on est en dialogue on ne peut pas bouger
+        {
+            return;
+        }
         TransformMovement();
         FirstPersonLook();
 
