@@ -55,9 +55,15 @@ public class DialogueManager : MonoBehaviour
     public void EnterDialogueMode(TextAsset inkJSON)
     {
         if (dialoguePanel == null)
+        {
             Debug.LogError("dialoguePanel is null!");
+        }
         else
+        {
+            Debug.Log("Activating dialogue panel");
             dialoguePanel.SetActive(true);
+        }
+            
         story = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
