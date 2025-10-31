@@ -9,6 +9,8 @@ using UnityEngine.EventSystems;
 public class DialogueManager : MonoBehaviour
 {
 
+    [Header("Typing Settings")]
+    [SerializeField] private float typingSpeed = 0.04f;
     
     [Header("Ink Story")]
     
@@ -27,7 +29,6 @@ public class DialogueManager : MonoBehaviour
     private Story story;
     private static DialogueManager instance;
     public bool dialogueIsPlaying { get; private set; } // readonly 
-
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
@@ -65,7 +66,7 @@ public class DialogueManager : MonoBehaviour
             return; 
         }
 
-        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        if ( Keyboard.current.enterKey.wasPressedThisFrame)
         { 
             ContinueStory();
         }
@@ -102,7 +103,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()
     {
-        yield return new WaitForSeconds(0.2f); // permet de s'assurer que toutes les actions de fin de dialogue sont terminées avant de fermer le panneau
+        yield return new WaitForSeconds(0.4f); // permet de s'assurer que toutes les actions de fin de dialogue sont terminées avant de fermer le panneau
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -112,15 +113,32 @@ public class DialogueManager : MonoBehaviour
     {
         if (story.canContinue)
         {
-            dialogueText.text = story.Continue();
-            DisplayChoices();
+         
+  
+            dialogueText.text = story.Continue().Trim();
             HandleTags(story.currentTags);
+            DisplayChoices();
+        }
+        else if (story.currentChoices.Count > 0) {
+            DisplayChoices();
         }
         else
         {
             StartCoroutine(ExitDialogueMode());
         }
     }
+
+    /*private IEnumerator DisplayLine(string line)
+    {
+        dialogueText.text = "";
+        canContinueToNextLine = false;
+        foreach (char letter in line.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        canContinueToNextLine = true;
+    }*/
 
     private void HandleTags(List<string> currentTags)
     {
@@ -192,7 +210,12 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
+      
         story.ChooseChoiceIndex(choiceIndex);
+        DisplayChoices();
+            // problème ici
         ContinueStory();
+ 
+
     }
 }
