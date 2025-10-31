@@ -16,6 +16,9 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI Elements")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private Animator portraitAnimator;
+    private Animator layoutAnimator;
 
     [Header("Choices UI Elements")]
     [SerializeField] private GameObject[] choices;
@@ -24,6 +27,11 @@ public class DialogueManager : MonoBehaviour
     private Story story;
     private static DialogueManager instance;
     public bool dialogueIsPlaying { get; private set; } // readonly 
+
+
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
+    private const string LAYOUT_TAG = "layout";
 
     private void Awake()
     {
@@ -38,6 +46,8 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+
+        layoutAnimator = dialoguePanel.GetComponent<Animator>();
 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -83,6 +93,10 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        displayNameText.text = "???"; // nom par défaut au début du dialogue
+        portraitAnimator.Play("Default");
+        layoutAnimator.Play("right");
+
         ContinueStory();
     }
 
@@ -100,10 +114,48 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = story.Continue();
             DisplayChoices();
+            HandleTags(story.currentTags);
         }
         else
         {
             StartCoroutine(ExitDialogueMode());
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+
+        foreach (string tag in currentTags)
+        {
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag could not be appropriately split: " + tag);
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagKey)
+            {
+                case SPEAKER_TAG:
+                    Debug.Log("Speaker: " + tagValue);
+                    // Gérer le changement de locuteur ici
+                    displayNameText.text = tagValue;
+                    break;
+                case PORTRAIT_TAG:
+                    Debug.Log("Portrait: " + tagValue);
+                    // Gérer le changement de portrait ici
+                    portraitAnimator.Play(tagValue); //
+                    break;
+                case LAYOUT_TAG:
+                    Debug.Log("Layout: " + tagValue);
+                    // Gérer le changement de mise en page ici
+                    layoutAnimator.Play(tagValue);
+                    break;
+                default:
+                    Debug.LogWarning("Unhandled tag: " + tag);
+                    break;
+            }
         }
     }
 
