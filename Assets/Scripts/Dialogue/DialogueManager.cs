@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
     [SerializeField] private Animator portraitAnimator;
+
     private Animator layoutAnimator;
 
     [Header("Choices UI Elements")]
@@ -27,12 +28,15 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI[] choicesText;
 
     private Story story;
-    private static DialogueManager instance;
+
+    //private static DialogueManager instance;
+    public static DialogueManager instance; // pas sûre que je mette dialogue manager en singleton mais pour l'instant ça me semble utile
     public bool dialogueIsPlaying { get; private set; } // readonly 
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
+    private const string TIMER_TAG = "timer";
 
     private void Awake()
     {
@@ -170,10 +174,27 @@ public class DialogueManager : MonoBehaviour
                     // Gérer le changement de mise en page ici
                     layoutAnimator.Play(tagValue);
                     break;
+                case TIMER_TAG:
+                    Debug.Log("Timer: " + tagValue);
+                    Debug.Log("Timer value as float: " + float.Parse(tagValue));
+                    // Gérer le timer ici
+                    float time = float.Parse(tagValue);
+                    DialogueTimer.instance.StartTimer(time);
+                    break;
                 default:
                     Debug.LogWarning("Unhandled tag: " + tag);
                     break;
             }
+        }
+    }
+
+
+    public void ChooseDefaultChoice()
+    {
+        if(story.currentChoices.Count > 0)
+        {
+            story.ChooseChoiceIndex(story.currentChoices.Count - 1);
+            ContinueStory();
         }
     }
 
