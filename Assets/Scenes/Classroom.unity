@@ -479,7 +479,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -2475,7 +2480,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -3143,6 +3153,38 @@ PlayableDirector:
     value: {fileID: 1229349697}
   - key: {fileID: 4630597106481756033, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
     value: {fileID: 462970349}
+  - key: {fileID: 2551531169196878817, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 1746103096}
+  - key: {fileID: 3771961241782247048, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 1746103096}
+  - key: {fileID: -5141157327852630247, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 2121354338}
+  - key: {fileID: 6755124698116800135, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 2121354338}
+  - key: {fileID: 4654239762393720822, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 2065587385}
+  - key: {fileID: 844244247509187773, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 2065587385}
+  - key: {fileID: -4872106562713356793, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 2054411470}
+  - key: {fileID: 3814062832713693407, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 2054411470}
+  - key: {fileID: -7977507243729600556, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 379879263}
+  - key: {fileID: -7791657544598376179, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 379879263}
+  - key: {fileID: -8214550356709178579, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 1125884743}
+  - key: {fileID: 6960926267615362711, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 1125884743}
+  - key: {fileID: -6019901178061564576, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 84602272}
+  - key: {fileID: 3017403722102130587, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 84602272}
+  - key: {fileID: -8768090799538073240, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 1783254882}
+  - key: {fileID: -6040611323855973820, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 1783254882}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &444482910
@@ -5721,7 +5763,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -8565,7 +8612,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -8772,7 +8824,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -9246,11 +9303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251165559484159446, guid: c1ca196d50ca4ce4298adfa74e808917, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -12.686
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251165559484159446, guid: c1ca196d50ca4ce4298adfa74e808917, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -185.564
+      value: 359
       objectReference: {fileID: 0}
     - target: {fileID: 6251165559484159446, guid: c1ca196d50ca4ce4298adfa74e808917, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -9859,7 +9916,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -9892,7 +9954,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 2a69eef61f061c54f924ded3c7f323da, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -10369,6 +10431,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 828524985}
     m_Modifications:
+    - target: {fileID: 2580534708817144336, guid: 1f1e754d0df26a14483ceb91bbfecc68, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5601368172356985069, guid: 1f1e754d0df26a14483ceb91bbfecc68, type: 3}
       propertyPath: m_Name
       value: NPC_1
