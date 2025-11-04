@@ -6,7 +6,7 @@ Alors, tu as compris la leçon ? #timer:5
     -> continue_cours
 
 + Pas vraiment... 
-    -> continue_cours
+    -> Questions
     
 + [Rester silencieux] 
     Toujours aussi silencieux... #speaker:Mr_Champignon #portrait:mr_champignon_sad #layout:left
@@ -16,4 +16,9 @@ Alors, tu as compris la leçon ? #timer:5
 === continue_cours ====
 Continuons notre cours sur les lavabos ! #speaker:Mr_Champignon #portrait:mr_champignon_neutral #layout:left
 -> DONE
+
+=== Questions === 
+Je peux répéter si tu veux !
+-> DONE 
+-> continue_cours
 
