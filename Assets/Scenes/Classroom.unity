@@ -3308,7 +3308,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 792476999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2283de84f7d4a2049bc6469f00707ec7, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf05cd32ad20f7488357f61b93aed64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTimer
   timerText: {fileID: 0}
