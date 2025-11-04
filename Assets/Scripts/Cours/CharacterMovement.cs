@@ -24,6 +24,16 @@ public class CharacterMovement : MonoBehaviour
     bool isWalking = false;
     Vector3 lastPosition;
 
+    // ajout des fonctions d'activation et de desactivation du script pour les cinématiques 
+    public void Activate()
+    {
+        this.enabled = true;
+    }
+
+    public void Deactivate()
+    {
+        this.enabled = false;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
