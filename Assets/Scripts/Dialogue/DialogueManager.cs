@@ -27,6 +27,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
+    [Header("Auto Dialogue Settings")]
+    [SerializeField] private bool autoDialogueMode = false;  // Active ou non le mode auto
+    [SerializeField] private float autoDialogueDelay = 2f;   // Temps avant ligne suivante
+
     private Story story;
 
     //private static DialogueManager instance;
@@ -47,6 +51,12 @@ public class DialogueManager : MonoBehaviour
         instance = this;
     }
 
+    public void PlayDialogueAutomatically(TextAsset inkJSON)
+    {
+        autoDialogueMode = true;
+        EnterDialogueMode(inkJSON); 
+    }
+
     private void Start()
     {
         dialogueIsPlaying = false;
@@ -65,16 +75,14 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (!dialogueIsPlaying)
-        {
-            return; 
-        }
+        if (!dialogueIsPlaying || autoDialogueMode) return;
 
-        if ( Keyboard.current.enterKey.wasPressedThisFrame)
-        { 
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        {
             ContinueStory();
         }
     }
+
 
     public static DialogueManager GetInstance()
     {
@@ -117,20 +125,33 @@ public class DialogueManager : MonoBehaviour
     {
         if (story.canContinue)
         {
-         
-  
             dialogueText.text = story.Continue().Trim();
             HandleTags(story.currentTags);
             DisplayChoices();
+
+            if (autoDialogueMode && story.currentChoices.Count == 0)
+            {
+                StopAllCoroutines();
+                StartCoroutine(AutoContinueAfterDelay());
+            }
         }
-        else if (story.currentChoices.Count > 0) {
+        else if (story.currentChoices.Count > 0)
+        {
             DisplayChoices();
         }
         else
         {
+            autoDialogueMode = false;
             StartCoroutine(ExitDialogueMode());
         }
     }
+
+    private IEnumerator AutoContinueAfterDelay()
+    {
+        yield return new WaitForSeconds(autoDialogueDelay);
+        ContinueStory();
+    }
+
 
     /*private IEnumerator DisplayLine(string line)
     {

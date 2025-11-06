@@ -1372,7 +1372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746316595705570715, guid: ae412e1496e38c5439778b6aacb70c36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -11.398
       objectReference: {fileID: 0}
     - target: {fileID: 1746316595705570715, guid: ae412e1496e38c5439778b6aacb70c36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2476,8 +2476,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280721939}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7140571, z: 0, w: 0.70008755}
-  m_LocalPosition: {x: -9.514744, y: 0, z: 6.31802}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2485,7 +2485,7 @@ Transform:
   - {fileID: 1704077807}
   - {fileID: 868168236}
   m_Father: {fileID: 828524985}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -3.721, z: 0}
 --- !u!95 &280721941
 Animator:
   serializedVersion: 7
@@ -9089,7 +9089,7 @@ Transform:
   m_GameObject: {fileID: 1704077806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.1580276, y: 1.21696, z: 1.00565}
+  m_LocalPosition: {x: 4.14, y: 1.21696, z: 1.00565}
   m_LocalScale: {x: 3, y: 2.5, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11095,7 +11095,43 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -1674754354919772374, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 1746103096}
+  - key: {fileID: 5015938745415351065, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 1746103096}
+  - key: {fileID: -8957131922645321890, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 2121354338}
+  - key: {fileID: 5443646459990625506, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 2121354338}
+  - key: {fileID: 771498753990640882, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 2065587385}
+  - key: {fileID: 5342881113551656936, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 2065587385}
+  - key: {fileID: 2589395425184140677, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 2054411470}
+  - key: {fileID: -8266003070598315508, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 2054411470}
+  - key: {fileID: -8895682162101501035, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 379879263}
+  - key: {fileID: -2168978651866169795, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 379879263}
+  - key: {fileID: 4588616717218950671, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 1125884743}
+  - key: {fileID: 3551654050576664736, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 1125884743}
+  - key: {fileID: -8457546567535605269, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 84602272}
+  - key: {fileID: -687342557152774721, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 84602272}
+  - key: {fileID: -6787253181411500202, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 1783254882}
+  - key: {fileID: -1530066339302327293, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 1783254882}
+  - key: {fileID: -1989252941057145659, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 280721941}
+  - key: {fileID: 7035288174291209312, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 280721941}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &2121354337 stripped
