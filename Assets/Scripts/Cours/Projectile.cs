@@ -3,10 +3,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    GameController gameController;
+    GameControllerBis gameController;
     void Start()
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController = GameObject.Find("GameController").GetComponent<GameControllerBis>();
     }
 
     // Update is called once per frame

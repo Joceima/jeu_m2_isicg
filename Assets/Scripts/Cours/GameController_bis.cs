@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using TMPro;
 
-public class GameController : MonoBehaviour
+public class GameControllerBis : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     SpawnTarget spawnTarget;
