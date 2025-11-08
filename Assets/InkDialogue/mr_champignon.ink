@@ -7,11 +7,11 @@ Certains d'entre vous viennent de penser à un brownie ou à une mousse au choco
 Aujourd'hui nous allons parler d'un instrument magique qui est le cerveau. Cette instrument qui décide de nous nous faire les projets au dernier moment.
 Nos cerveaux sont composés de deux hémisphères...
 Peux tu me dire à quoi correspond l'hémisphère de gauche ? #timer:5
-+ Heuu...Je ne sais pas, je suis droitier.
++ Heuu...Je ne sais pas, je suis droitier. #speaker:main_character #portait:main_character_neutral #layout:right
     ->mauvaiseReponse1
-+ La logique ? Mais je suis droitier.
++ La logique ? Mais je suis droitier. #speaker:main_character #portait:main_character_neutral #layout:right
     ->bonneReponse1
-+ Ne pas répondre et paniquer mentalement
++ [Ne pas répondre et paniquer mentalement] #speaker:main_character #portait:main_character_neutral #layout:right
     ->mauvaiseReponse2
 
 === suiteCours ===
@@ -20,11 +20,11 @@ Parfois, les pensées sont tellement forte, que les évènements deviennent rée
 Les évènements deviennent réels car le cerveau croit tellement à ces histoires fictives, qu'inconsciamment, l'humain reproduit les actions négatives qu'ils imaginent.
 L'humain est en quelques soit maudit par sa propre cerveau... #portait:mr_champignon_sad
 Mais il y a des solutions ! Qu'est-ce tu souhaites proposer ? #timer:5
-+ Réagir de manière positive en acceptant le présent quelques soient la gravité de l'évènement.
++ Réagir de manière positive en acceptant le présent quelques soient la gravité de l'évènement. #speaker:main_character #portait:main_character_neutral #layout:right
     ->bonneReponse2
-+ Labotomiser notre cerveau.
++ Labotomiser notre cerveau. #speaker:main_character #portait:main_character_neutral #layout:right
     ->mauvaiseReponse3
-+ Je ne sais pas, aller voir un psychologue ?.
++ Je ne sais pas, aller voir un psychologue ? #speaker:main_character #portait:main_character_neutral #layout:right)
     ->reponseNeutre1
 
 === finCours ===

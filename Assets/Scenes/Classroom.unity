@@ -5078,6 +5078,7 @@ MonoBehaviour:
   autoDialogueMode: 0
   autoDialogueDelay: 2
   canContinueToNextLine: 0
+  isTyping: 0
 --- !u!114 &792477002
 MonoBehaviour:
   m_ObjectHideFlags: 0
