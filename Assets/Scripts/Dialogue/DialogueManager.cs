@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
     [SerializeField] private Animator portraitAnimator;
+    [SerializeField] private GameObject continueIcon;
 
     private Animator layoutAnimator;
 
@@ -36,6 +37,10 @@ public class DialogueManager : MonoBehaviour
     //private static DialogueManager instance;
     public static DialogueManager instance; // pas sûre que je mette dialogue manager en singleton mais pour l'instant ça me semble utile
     public bool dialogueIsPlaying { get; private set; } // readonly 
+
+    public bool canContinueToNextLine = false;
+    private Coroutine displayLineCoroutine;
+    public bool isTyping = false;
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
@@ -77,7 +82,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!dialogueIsPlaying || autoDialogueMode) return;
 
-        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        if (canContinueToNextLine && Keyboard.current.enterKey.wasPressedThisFrame)
         {
             ContinueStory();
         }
@@ -123,17 +128,16 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueStory()
     {
+        if (isTyping) return;
+
         if (story.canContinue)
         {
-            dialogueText.text = story.Continue().Trim();
-            HandleTags(story.currentTags);
-            DisplayChoices();
+            if (displayLineCoroutine != null)
+                StopCoroutine(displayLineCoroutine);
 
-            if (autoDialogueMode && story.currentChoices.Count == 0)
-            {
-                StopAllCoroutines();
-                StartCoroutine(AutoContinueAfterDelay());
-            }
+            string nextLine = story.Continue();
+            HandleTags(story.currentTags);
+            displayLineCoroutine = StartCoroutine(DisplayLine(nextLine.Trim()));
         }
         else if (story.currentChoices.Count > 0)
         {
@@ -146,6 +150,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+
     private IEnumerator AutoContinueAfterDelay()
     {
         yield return new WaitForSeconds(autoDialogueDelay);
@@ -153,17 +158,40 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    /*private IEnumerator DisplayLine(string line)
+    private IEnumerator DisplayLine(string line)
     {
         dialogueText.text = "";
+        continueIcon.SetActive(false);
+        HideChoices();
         canContinueToNextLine = false;
+        isTyping = true;
+
         foreach (char letter in line.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+
+        isTyping = false;
+        continueIcon.SetActive(true);
+        DisplayChoices();
         canContinueToNextLine = true;
-    }*/
+
+        if (autoDialogueMode && story.currentChoices.Count == 0)
+        {
+            yield return new WaitForSeconds(autoDialogueDelay);
+            ContinueStory();
+        }
+    }
+
+
+    private void HideChoices()
+    {
+        foreach (GameObject choice in choices)
+        {
+            choice.SetActive(false);
+        }
+    }
 
     private void HandleTags(List<string> currentTags)
     {
@@ -252,12 +280,12 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-      
-        story.ChooseChoiceIndex(choiceIndex);
-        DisplayChoices();
+        if(canContinueToNextLine)
+        {
+            story.ChooseChoiceIndex(choiceIndex);
+            DisplayChoices();
             // problème ici
-        ContinueStory();
- 
-
+            ContinueStory();
+        }
     }
 }
