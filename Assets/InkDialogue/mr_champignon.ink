@@ -3,7 +3,7 @@ Bonjour chers étudiants ! #speaker:Mr.Champignon #portrait:mr_champignon_neutra
 
 === main ===
 Le cerveau humain est fascinant. Il peut se concentrer sur une tâche pendant 3 minutes avant de penser à du chocolat.
-Certains d'entre vous viennent de penser à un brownie ou à une mousse au chocolat. Voilà, une preuve vivante. #portait:mr_champignon_happy
+Certains d'entre vous viennent de penser à un brownie ou à une mousse au chocolat. Voilà, une preuve vivante. #portait:mr_champignon_happy #QTEConcentration:5,3
 Aujourd'hui nous allons parler d'un instrument magique qui est le cerveau. Cette instrument qui décide de nous nous faire les projets au dernier moment.
 Nos cerveaux sont composés de deux hémisphères...
 Peux tu me dire à quoi correspond l'hémisphère de gauche ? #timer:5
@@ -16,7 +16,7 @@ Peux tu me dire à quoi correspond l'hémisphère de gauche ? #timer:5
 
 === suiteCours ===
 Le cerveau n'aime pas l'incertitude, alors il invente des histoires...
-Parfois, les pensées sont tellement forte, que les évènements deviennent réels. 
+Parfois, les pensées sont tellement forte, que les évènements deviennent réels. #QTEConcentration:5,5
 Les évènements deviennent réels car le cerveau croit tellement à ces histoires fictives, qu'inconsciamment, l'humain reproduit les actions négatives qu'ils imaginent.
 L'humain est en quelques soit maudit par sa propre cerveau... #portait:mr_champignon_sad
 Mais il y a des solutions ! Qu'est-ce tu souhaites proposer ? #timer:5

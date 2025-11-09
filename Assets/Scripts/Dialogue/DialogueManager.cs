@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
     private const string TIMER_TAG = "timer";
+    private const string QTE_TAG = "QTEConcentration";
 
     private void Awake()
     {
@@ -230,6 +231,32 @@ public class DialogueManager : MonoBehaviour
                     float time = float.Parse(tagValue);
                     DialogueTimer.instance.StartTimer(time);
                     break;
+                case QTE_TAG:
+                    Debug.Log("QTE: " + tagValue);
+                    // Gérer le QTE ici
+                    string[] qteParams = tagValue.Split(',');
+                    if (qteParams.Length != 2)
+                    {
+                        Debug.LogError("QTE tag parameters are incorrect: " + tagValue);
+                        break;
+                    }
+                    float qteDuration = float.Parse(qteParams[0].Trim());
+                    int qteTargetCount = int.Parse(qteParams[1].Trim());
+                    // peut être mettre le dialogue en pause
+
+                    QTEManager.Instance.StartQTE("concentration", qteDuration, qteTargetCount, success =>
+                    {
+                        if(success)
+                            {
+                            Debug.Log("QTE succeeded!");
+                        } else
+                        {
+                            Debug.Log("QTE failed.");
+                        }
+                        // suite du dialogue après le QTE ?
+                    });
+                    break;
+
                 default:
                     Debug.LogWarning("Unhandled tag: " + tag);
                     break;
