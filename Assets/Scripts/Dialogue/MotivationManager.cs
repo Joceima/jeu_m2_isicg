@@ -13,6 +13,10 @@ public class MotivationManager : MonoBehaviour
     [Header("Current State")]
     [SerializeField] private float currentMotivation = 50f;
 
+    [Header("Decay Settings")]
+    [SerializeField] private float decayRate = 1f; // Motivation decay per second
+    [SerializeField] private bool autoDecayEnabled = true;
+
     private void Awake()
     {
         // Singleton pattern sécurisé
@@ -22,6 +26,23 @@ public class MotivationManager : MonoBehaviour
             return;
         }
         instance = this;
+    }
+
+    private void Update()
+    {
+        if (autoDecayEnabled)
+        {
+            DecayOverTime();
+        }
+    }
+
+    private void DecayOverTime()
+    {
+        if(currentMotivation > minMotivation)
+        {
+            RemoveSociability(decayRate * Time.deltaTime);
+        }
+           
     }
 
     private void Start()
