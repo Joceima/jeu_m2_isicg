@@ -156,5 +156,10 @@ public class QTEConcentration : QTEBase
 
         qtePanel.gameObject.SetActive(false);
         onQTEComplete?.Invoke(success);
+
+        if(success)
+            MotivationManager.instance.AddMotivation(10f);
+        else 
+            MotivationManager.instance.AddMotivation(-5f);
     }
 }
