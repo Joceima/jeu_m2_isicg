@@ -28,7 +28,8 @@ Mais il y a des solutions ! Qu'est-ce tu souhaites proposer ? #timer:5
     ->reponseNeutre1 
 
 === finCours ===
-Bon le cours est terminé pour aujourd'hui. Je vais vous donner le sujet du projet ! Vous allez devoir programmer un réseau neuronnal avec deux hémisphères ! #speaker:Mr.Champignon #portrait:mr_champignon_neutral #layout:left
+Bon le cours est terminé pour aujourd'hui. #QTEConcentration:10,10
+Je vais vous donner le sujet du projet ! Vous allez devoir programmer un réseau neuronnal avec deux hémisphères ! #speaker:Mr.Champignon #portrait:mr_champignon_neutral #layout:left #response:bad
 
 -> DONE
 
