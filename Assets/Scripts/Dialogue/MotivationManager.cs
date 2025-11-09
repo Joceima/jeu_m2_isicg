@@ -40,6 +40,13 @@ public class MotivationManager : MonoBehaviour
         UpdateSociabilityBar();
     }
 
+    public void RemoveSociability(float amount)
+    {
+        currentMotivation = Mathf.Clamp(currentMotivation - amount, minMotivation, maxMotivation);
+        UpdateSociabilityBar();
+    
+    }
+
     private void UpdateSociabilityBar()
     {
         if (MotivationBar != null)

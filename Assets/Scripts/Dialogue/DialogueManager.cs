@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour
     private const string LAYOUT_TAG = "layout";
     private const string TIMER_TAG = "timer";
     private const string QTE_TAG = "QTEConcentration";
+    private const string RESPONSE_TAG = "response";
 
     private void Awake()
     {
@@ -255,6 +256,13 @@ public class DialogueManager : MonoBehaviour
                         }
                         // suite du dialogue après le QTE ?
                     });
+                    break;
+                case RESPONSE_TAG:
+                    Debug.Log("Response: " + tagValue);
+                    if (tagValue.ToLower() == "bad")
+                        MotivationManager.instance.RemoveSociability(15);
+                    else if (tagValue.ToLower() == "good")
+                        MotivationManager.instance.AddMotivation(5);
                     break;
 
                 default:

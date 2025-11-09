@@ -7,11 +7,11 @@ Certains d'entre vous viennent de penser à un brownie ou à une mousse au choco
 Aujourd'hui nous allons parler d'un instrument magique qui est le cerveau. Cette instrument qui décide de nous nous faire les projets au dernier moment.
 Nos cerveaux sont composés de deux hémisphères...
 Peux tu me dire à quoi correspond l'hémisphère de gauche ? #timer:5
-+ Heuu...Je ne sais pas, je suis droitier. #speaker:main_character #portait:main_character_neutral #layout:right
-    ->mauvaiseReponse1
-+ La logique ? Mais je suis droitier. #speaker:main_character #portait:main_character_neutral #layout:right
++ Heuu...Je ne sais pas, je suis droitier. #speaker:main_character #portait:main_character_neutral #layout:right #response:bad
+    ->mauvaiseReponse1 
++ La logique ? Mais je suis droitier. #speaker:main_character #portait:main_character_neutral #layout:right #response:good
     ->bonneReponse1
-+ [Ne pas répondre et paniquer mentalement] #speaker:main_character #portait:main_character_neutral #layout:right
++ [Ne pas répondre et paniquer mentalement] #speaker:main_character #portait:main_character_neutral #layout:right #response:bad
     ->mauvaiseReponse2
 
 === suiteCours ===
@@ -20,12 +20,12 @@ Parfois, les pensées sont tellement forte, que les évènements deviennent rée
 Les évènements deviennent réels car le cerveau croit tellement à ces histoires fictives, qu'inconsciamment, l'humain reproduit les actions négatives qu'ils imaginent.
 L'humain est en quelques soit maudit par sa propre cerveau... #portait:mr_champignon_sad
 Mais il y a des solutions ! Qu'est-ce tu souhaites proposer ? #timer:5
-+ Réagir de manière positive en acceptant le présent quelques soient la gravité de l'évènement. #speaker:main_character #portait:main_character_neutral #layout:right
++ Réagir de manière positive en acceptant le présent quelques soient la gravité de l'évènement. #speaker:main_character #portait:main_character_neutral #layout:right #response:good
     ->bonneReponse2
-+ Labotomiser notre cerveau. #speaker:main_character #portait:main_character_neutral #layout:right
++ Labotomiser notre cerveau. #speaker:main_character #portait:main_character_neutral #layout:right #response:bad
     ->mauvaiseReponse3
-+ Je ne sais pas, aller voir un psychologue ? #speaker:main_character #portait:main_character_neutral #layout:right)
-    ->reponseNeutre1
++ Je ne sais pas, aller voir un psychologue ? #speaker:main_character #portait:main_character_neutral #layout:right #response:neutral
+    ->reponseNeutre1 
 
 === finCours ===
 Bon le cours est terminé pour aujourd'hui. Je vais vous donner le sujet du projet ! Vous allez devoir programmer un réseau neuronnal avec deux hémisphères ! #speaker:Mr.Champignon #portrait:mr_champignon_neutral #layout:left
@@ -33,7 +33,7 @@ Bon le cours est terminé pour aujourd'hui. Je vais vous donner le sujet du proj
 -> DONE
 
 === mauvaiseReponse1 ===
-Ahhh c'est la logique, je l'avais dit au cours précédent ! Bon passons. #speaker:Mr.Champignon #portrait:mr_champignon_neutral #layout:left
+Ahhh c'est la logique, je l'avais dit au cours précédent ! Bon passons. #speaker:Mr.Champignon #portrait:mr_champignon_neutral #layout:left 
 -> suiteCours
 
 === mauvaiseReponse2 ===
