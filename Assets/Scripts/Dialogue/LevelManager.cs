@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance;
+    public LevelManager Instance;
     [Header("Level Settings")]
     public int levelIndex;
 
@@ -24,16 +24,6 @@ public class LevelManager : MonoBehaviour
     [Header("Cutscenes to play after level ends")]
     public int endCutsceneIndex = -1;
 
-    private void Awake()
-    {
-        if(Instance == null)
-        {
-            Instance = this;
-        } else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public void StartLevelSequence()
     {
@@ -84,5 +74,7 @@ public class LevelManager : MonoBehaviour
 
           Debug.Log("No End Cutscene to play.");
         }
+        Debug.Log($"Level {levelIndex} complete, notifying GameController...");
+        GameController.Instance.OnLevelComplete(levelIndex);
     }
 }

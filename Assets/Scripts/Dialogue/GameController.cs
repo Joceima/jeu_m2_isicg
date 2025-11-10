@@ -27,11 +27,17 @@ public class GameController : MonoBehaviour
 
     public void StartLevel(int levelIndex)
     {
+        for (int i = 0; i < levels.Length; i++)
+        {
+            levels[i].gameObject.SetActive(i == levelIndex);
+        }
+
         if (levelIndex < levels.Length)
         {
             levels[levelIndex].StartLevelSequence();
         }
     }
+
 
     public void OnLevelComplete(int levelIndex)
     {
