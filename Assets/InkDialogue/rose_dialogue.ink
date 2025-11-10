@@ -1,4 +1,4 @@
-Hello,  #speaker:Rose #portrait:rose_neutral #layout:left
+Bonjour...  #speaker:Rose #portrait:rose_neutral #layout:left
 -> main
 
 === main ===

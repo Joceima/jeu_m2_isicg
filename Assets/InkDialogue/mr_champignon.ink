@@ -17,7 +17,7 @@ Peux tu me dire à quoi correspond l'hémisphère de gauche ? #timer:5
 === suiteCours ===
 Le cerveau n'aime pas l'incertitude, alors il invente des histoires...
 Parfois, les pensées sont tellement forte, que les évènements deviennent réels.#speaker:Mr.Champignon #portrait:mr_champignon_neutral #layout:left #QTEConcentration:10,10
-Les évènements deviennent réels car le cerveau croit tellement à ces histoires fictives, qu'inconsciamment, l'humain reproduit les actions négatives qu'ils imaginent.
+Les évènements deviennent réels car le cerveau croit tellement à ces histoires fictives, qu'inconsciamment, l'humain reproduit les actions négatives qu'ils imaginent.#QTEConcentration:10,10
 L'humain est en quelques soit maudit par sa propre cerveau... #portait:mr_champignon_sad
 Mais il y a des solutions ! Qu'est-ce tu souhaites proposer ? #timer:5
 + Réagir de manière positive en acceptant le présent quelques soient la gravité de l'évènement. #speaker:main_character #portait:main_character_neutral #layout:right #response:good
@@ -30,6 +30,8 @@ Mais il y a des solutions ! Qu'est-ce tu souhaites proposer ? #timer:5
 === finCours ===
 Bon le cours est terminé pour aujourd'hui. #QTEConcentration:10,10
 Je vais vous donner le sujet du projet ! Vous allez devoir programmer un réseau neuronnal avec deux hémisphères ! #speaker:Mr.Champignon #portrait:mr_champignon_neutral #layout:left #response:bad
+
+Quoi mais c'est quoi ce projet ?  #speaker:main_character #portait:main_character_sad #layout:right #response:bad
 
 -> DONE
 
