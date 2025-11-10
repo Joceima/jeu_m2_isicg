@@ -1,22 +1,26 @@
-Shader "Custom/GaussianBlur"
+Shader "Custom/UIBlur"
 {
     Properties
     {
-        [MainColor] _BaseColor("Base Color", Color) = (1, 1, 1, 1)
-        [MainTexture] _BaseMap("Base Map", 2D) = "white"
+        _MainTex ("Texture", 2D) = "white" {}
+        _BlurSize ("Blur Size", Range(0, 10)) = 0
+        _BaseColor ("Base Color", Color) = (1,1,1,1)
     }
 
     SubShader
     {
-        Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline" }
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" "RenderPipeline"="UniversalPipeline" }
+        Blend SrcAlpha OneMinusSrcAlpha
+        Cull Off
+        ZWrite Off
 
         Pass
         {
+            Name "UIBlur"
             HLSLPROGRAM
 
             #pragma vertex vert
             #pragma fragment frag
-
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
             struct Attributes
@@ -31,25 +35,39 @@ Shader "Custom/GaussianBlur"
                 float2 uv : TEXCOORD0;
             };
 
-            TEXTURE2D(_BaseMap);
-            SAMPLER(sampler_BaseMap);
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
 
-            CBUFFER_START(UnityPerMaterial)
-                half4 _BaseColor;
-                float4 _BaseMap_ST;
-            CBUFFER_END
+            float _BlurSize;
+            float4 _BaseColor;
 
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
-                OUT.uv = TRANSFORM_TEX(IN.uv, _BaseMap);
+                OUT.uv = IN.uv;
                 return OUT;
             }
 
             half4 frag(Varyings IN) : SV_Target
             {
-                half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, IN.uv) * _BaseColor;
+                float2 uv = IN.uv;
+                half4 color = half4(0,0,0,0);
+                float total = 0;
+
+                // Simple Gaussian blur kernel
+                for (int x = -2; x <= 2; x++)
+                {
+                    for (int y = -2; y <= 2; y++)
+                    {
+                        float weight = exp(-(x * x + y * y) / 4.0);
+                        color += SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv + float2(x, y) * _BlurSize * 0.001) * weight;
+                        total += weight;
+                    }
+                }
+
+                color /= total;
+                color *= _BaseColor;
                 return color;
             }
             ENDHLSL

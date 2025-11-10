@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class MotivationManager : MonoBehaviour
@@ -10,12 +13,21 @@ public class MotivationManager : MonoBehaviour
     [SerializeField] private float maxMotivation = 100f;
     [SerializeField] private float minMotivation = 0f;
 
+
+
     [Header("Current State")]
     [SerializeField] private float currentMotivation = 50f;
+
+    [Header("Volume blur Settings")]
+    [SerializeField] private Volume globalVolume;
 
     [Header("Decay Settings")]
     [SerializeField] private float decayRate = 1f; // Motivation decay per second
     [SerializeField] private bool autoDecayEnabled = true;
+
+    private Bloom bloom;
+    private ColorAdjustments colorAdjustments;
+    private Vignette vignette;
 
     private void Awake()
     {
@@ -28,22 +40,6 @@ public class MotivationManager : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
-    {
-        if (autoDecayEnabled)
-        {
-            DecayOverTime();
-        }
-    }
-
-    private void DecayOverTime()
-    {
-        if(currentMotivation > minMotivation)
-        {
-            RemoveSociability(decayRate * Time.deltaTime);
-        }
-           
-    }
 
     private void Start()
     {
@@ -53,24 +49,80 @@ public class MotivationManager : MonoBehaviour
             MotivationBar.maxValue = maxMotivation;
             MotivationBar.value = currentMotivation;
         }
+
+        if(globalVolume.profile.TryGet(out bloom))
+        {
+            bloom.active = true;
+        }
+
+        if(globalVolume.profile.TryGet(out colorAdjustments))
+        {
+            colorAdjustments.active = true;
+        }
+        if(globalVolume.profile.TryGet(out vignette))
+        {
+            vignette.active = true;
+        }
     }
+
+    private void Update()
+    {
+
+        if (autoDecayEnabled)
+        {
+            DecayOverTime();
+        }
+        float fogIntensity = 1f - (currentMotivation / maxMotivation);
+        if(bloom != null)
+        {
+            bloom.intensity.value = Mathf.Lerp(5f, 20f, fogIntensity);
+        }
+        if(colorAdjustments != null)
+        {
+            colorAdjustments.saturation.value = Mathf.Lerp(0f, -100f, fogIntensity);
+            colorAdjustments.contrast.value = Mathf.Lerp(0f, 50f, fogIntensity);
+        }
+        if(vignette != null)
+        {
+            vignette.intensity.value = 0.5f*Mathf.Lerp(0.3f, 0.6f, fogIntensity);
+        }
+    }
+
+
+    private void DecayOverTime()
+    {
+        if (currentMotivation > minMotivation)
+        {
+            RemoveMotivation(decayRate * Time.deltaTime);
+        }
+    }
+
 
     public void AddMotivation(float amount)
     {
         currentMotivation = Mathf.Clamp(currentMotivation + amount, minMotivation, maxMotivation);
-        UpdateSociabilityBar();
+        UpdateMotivationBar();
+        //UpdateFog();
     }
 
-    public void RemoveSociability(float amount)
+    public void RemoveMotivation(float amount)
     {
         currentMotivation = Mathf.Clamp(currentMotivation - amount, minMotivation, maxMotivation);
-        UpdateSociabilityBar();
+        UpdateMotivationBar();
+        //UpdateFog();
     
     }
 
-    private void UpdateSociabilityBar()
+    private void UpdateMotivationBar()
     {
         if (MotivationBar != null)
             MotivationBar.value = currentMotivation;
     }
+
+   /* private void UpdateFog()
+    {
+        if(fogController == null) return;
+        float fogLevel = 1f - (currentMotivation / maxMotivation);
+        //fogController.SetFogIntensity(fogLevel);
+    }*/
 }

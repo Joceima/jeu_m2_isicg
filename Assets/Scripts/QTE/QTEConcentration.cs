@@ -160,6 +160,6 @@ public class QTEConcentration : QTEBase
         if(success)
             MotivationManager.instance.AddMotivation(10f);
         else 
-            MotivationManager.instance.AddMotivation(-5f);
+            MotivationManager.instance.RemoveMotivation(10f);
     }
 }

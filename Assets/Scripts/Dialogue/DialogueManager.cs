@@ -260,7 +260,7 @@ public class DialogueManager : MonoBehaviour
                 case RESPONSE_TAG:
                     Debug.Log("Response: " + tagValue);
                     if (tagValue.ToLower() == "bad")
-                        MotivationManager.instance.RemoveSociability(15);
+                        MotivationManager.instance.RemoveMotivation(15);
                     else if (tagValue.ToLower() == "good")
                         MotivationManager.instance.AddMotivation(5);
                     break;
