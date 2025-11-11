@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
     [Header("Cutscenes to play after level ends")]
     public int endCutsceneIndex = -1;
 
+    private bool isRestarting = false;
 
     public void StartLevelSequence()
     {
@@ -74,6 +75,11 @@ public class LevelManager : MonoBehaviour
 
           Debug.Log("No End Cutscene to play.");
         }
+        if (!isRestarting)
+        {
+            GameController.Instance.OnLevelComplete(levelIndex);
+        }
+        isRestarting = false;
         Debug.Log($"Level {levelIndex} complete, notifying GameController...");
         GameController.Instance.OnLevelComplete(levelIndex);
     }

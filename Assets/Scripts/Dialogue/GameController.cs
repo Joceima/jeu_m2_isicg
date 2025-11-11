@@ -5,7 +5,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
 
     [SerializeField] private LevelManager[] levels;
-    private int currentLevelIndex = 0;
+    public int currentLevelIndex;
 
     private void Awake()
     {
@@ -50,5 +50,25 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("All levels completed! Game Over.");
         }
+    }
+
+    public void RestartCurrentLevel()
+    {
+        Debug.Log("Restarting Level: " + currentLevelIndex);
+        if(GameOverManager.Instance != null)
+        {
+            GameOverManager.Instance.HideGameOver();
+        }
+        if(MotivationManager.instance != null)
+        {
+            MotivationManager.instance.ResetMotivation();
+        }
+
+        if(DialogueManager.instance != null)
+        {
+            DialogueManager.instance.ResetDialogue();
+        }
+        levels[currentLevelIndex].StopAllCoroutines();
+        levels[currentLevelIndex].StartLevelSequence();
     }
 }

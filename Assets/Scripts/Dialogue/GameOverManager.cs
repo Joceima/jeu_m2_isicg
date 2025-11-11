@@ -8,7 +8,9 @@ public class GameOverManager : MonoBehaviour
     public static GameOverManager Instance;
 
     [SerializeField] private Image gameOverImage;
-    [SerializeField] private float fadeDuration = 2f;
+    [SerializeField] private float restartDelay = 2f;
+
+    private bool isGameOver = false;
 
     private void Awake()
     {
@@ -22,37 +24,58 @@ public class GameOverManager : MonoBehaviour
             return;
         }
 
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
         if(gameOverImage != null)
         {
-            Color c = gameOverImage.color;
-            c.a = 0f;
-            gameOverImage.color = c;
+            gameOverImage.gameObject.SetActive(false);
         }
     }
 
-    public void ShowGameOver()
+    public void TriggerGameOver()
     {
+        if (isGameOver) return;
+        isGameOver = true;
+        Debug.Log("Game Over triggered.");
+
         if (gameOverImage != null)
         {
-            StartCoroutine(FadeInGameOver());
+            gameOverImage.gameObject.SetActive(true);
         }
+
+        Time.timeScale = 0f; // Pause the game
+
+        StartCoroutine(RestartLevelAfterDelay());
     }
 
-    private IEnumerator FadeInGameOver()
+    private IEnumerator RestartLevelAfterDelay()
     {
-        float elapsedTime = 0f;
-        Color c = gameOverImage.color;
+        yield return new WaitForSecondsRealtime(restartDelay);
+        Time.timeScale = 1f; // Resume the game
 
-        while (elapsedTime < fadeDuration)
+        if (GameController.Instance != null)
         {
-            elapsedTime += Time.deltaTime;
-            c.a = Mathf.Clamp01(elapsedTime / fadeDuration);
-            gameOverImage.color = c;
-            yield return null;
+            int currentLevel = GameController.Instance.currentLevelIndex;
+            Debug.Log("Restarting Level: " + currentLevel);
+            GameController.Instance.RestartCurrentLevel();
         }
+        else
+        {
+            Debug.LogWarning("GameController instance not found. Cannot restart level.");
+        }
+        isGameOver = false;
+    }
 
-        c.a = 1f;
-        gameOverImage.color = c;
+    public void HideGameOver()
+    {
+        if(gameOverImage != null)
+        {
+            gameOverImage.gameObject.SetActive(false);
+        }
+        Time.timeScale = 1f; // Resume the game
     }
 
 

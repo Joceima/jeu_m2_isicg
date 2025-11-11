@@ -323,4 +323,19 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
         }
     }
+
+
+    public void ResetDialogue()
+    {
+        Debug.Log("Resetting dialogue manager state.");
+        dialogueIsPlaying = false;
+        story = null;
+        if(dialoguePanel != null)
+            dialoguePanel.SetActive(false);
+
+        dialogueText.text = "";
+        displayNameText.text = "";
+        portraitAnimator.Play("Default");
+        layoutAnimator.Play("right");
+    }
 }
