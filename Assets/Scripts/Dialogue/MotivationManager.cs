@@ -16,13 +16,15 @@ public class MotivationManager : MonoBehaviour
 
 
     [Header("Current State")]
-    [SerializeField] private float currentMotivation = 50f;
+    [SerializeField] private float currentMotivation = 75f;
+    [SerializeField] private Image fillImage;
+    [SerializeField] private Gradient motivationGradient;
 
     [Header("Volume blur Settings")]
     [SerializeField] private Volume globalVolume;
 
     [Header("Decay Settings")]
-    [SerializeField] private float decayRate = 1f; // Motivation decay per second
+    [SerializeField] private float decayRate = 0.4f; // Motivation decay per second
     [SerializeField] private bool autoDecayEnabled = true;
 
     private Bloom bloom;
@@ -67,24 +69,32 @@ public class MotivationManager : MonoBehaviour
 
     private void Update()
     {
-
+     
         if (autoDecayEnabled)
         {
             DecayOverTime();
         }
+        if(fillImage != null && motivationGradient != null)
+        {
+            float t = currentMotivation / maxMotivation;
+            fillImage.color = motivationGradient.Evaluate(t);
+        }
         float fogIntensity = 1f - (currentMotivation / maxMotivation);
         if(bloom != null)
         {
+            Debug.Log("Updating bloom intensity to " + Mathf.Lerp(5f, 20f, fogIntensity));
             bloom.intensity.value = Mathf.Lerp(5f, 20f, fogIntensity);
         }
         if(colorAdjustments != null)
         {
+            Debug.Log("Updating color adjustments saturation to " + Mathf.Lerp(0f, -100f, fogIntensity) + " and contrast to " + Mathf.Lerp(0f, 50f, fogIntensity));
             colorAdjustments.saturation.value = Mathf.Lerp(0f, -100f, fogIntensity);
             colorAdjustments.contrast.value = Mathf.Lerp(0f, 50f, fogIntensity);
         }
         if(vignette != null)
         {
-            vignette.intensity.value = 0.5f*Mathf.Lerp(0.3f, 0.6f, fogIntensity);
+            Debug.Log("Updating vignette intensity to " + 0.5f*Mathf.Lerp(0.3f, 0.6f, fogIntensity));
+            vignette.intensity.value = 1.1f*Mathf.Lerp(0.3f, 0.6f, fogIntensity);
         }
     }
 
@@ -110,7 +120,11 @@ public class MotivationManager : MonoBehaviour
         currentMotivation = Mathf.Clamp(currentMotivation - amount, minMotivation, maxMotivation);
         UpdateMotivationBar();
         //UpdateFog();
-    
+        if (currentMotivation <= minMotivation)
+        {
+            GameOverManager.Instance.ShowGameOver();
+        }
+
     }
 
     private void UpdateMotivationBar()

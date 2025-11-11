@@ -3,35 +3,35 @@ Bonjour chers étudiants ! #speaker:Mr.Champignon #portrait:mr_champignon_neutra
 
 === main ===
 Le cerveau humain est fascinant. Il peut se concentrer sur une tâche pendant 3 minutes avant de penser à du chocolat.
-Certains d'entre vous viennent de penser à un brownie ou à une mousse au chocolat. Voilà, une preuve vivante. #portait:mr_champignon_happy #QTEConcentration:10,6
+Certains d'entre vous viennent de penser à un brownie ou à une mousse au chocolat. Voilà, une preuve vivante. #portrait:mr_champignon_happy #QTEConcentration:10,6
 Aujourd'hui nous allons parler d'un instrument magique qui est le cerveau. Cette instrument qui décide de nous nous faire les projets au dernier moment.
 Nos cerveaux sont composés de deux hémisphères...
-Peux tu me dire à quoi correspond l'hémisphère de gauche ? #timer:5
-+ Heuu...Je ne sais pas, je suis droitier. #speaker:main_character #portait:main_character_neutral #layout:right #response:bad
+Peux tu me dire à quoi correspond l'hémisphère de gauche ? #timer:6
++ Heuu...Je ne sais pas, je suis droitier. #speaker:Vous #portrait:main_character_neutral #layout:right #response:bad
     ->mauvaiseReponse1 
-+ La logique ? Mais je suis droitier. #speaker:main_character #portait:main_character_neutral #layout:right #response:good
++ La logique ? Mais je suis droitier. #speaker:Vous #portrait:main_character_neutral #layout:right #response:good
     ->bonneReponse1
-+ [Ne pas répondre et paniquer mentalement] #speaker:main_character #portait:main_character_neutral #layout:right #response:bad
++ [Ne pas répondre et paniquer mentalement] #speaker:Vous #portrait:main_character_neutral #layout:right #response:bad
     ->mauvaiseReponse2
 
 === suiteCours ===
 Le cerveau n'aime pas l'incertitude, alors il invente des histoires...
 Parfois, les pensées sont tellement forte, que les évènements deviennent réels.#speaker:Mr.Champignon #portrait:mr_champignon_neutral #layout:left #QTEConcentration:10,10
 Les évènements deviennent réels car le cerveau croit tellement à ces histoires fictives, qu'inconsciamment, l'humain reproduit les actions négatives qu'ils imaginent.#QTEConcentration:10,10
-L'humain est en quelques soit maudit par sa propre cerveau... #portait:mr_champignon_sad
+L'humain est en quelques soit maudit par sa propre cerveau... #portrait:mr_champignon_sad
 Mais il y a des solutions ! Qu'est-ce tu souhaites proposer ? #timer:5
-+ Réagir de manière positive en acceptant le présent quelques soient la gravité de l'évènement. #speaker:main_character #portait:main_character_neutral #layout:right #response:good
++ Réagir de manière positive en acceptant le présent quelques soient la gravité de l'évènement. #speaker:Vous #portrait:main_character_neutral #layout:right #response:good
     ->bonneReponse2
-+ Labotomiser notre cerveau. #speaker:main_character #portait:main_character_neutral #layout:right #response:bad
++ Labotomiser notre cerveau. #speaker:Vous #portrait:main_character_neutral #layout:right #response:bad
     ->mauvaiseReponse3
-+ Je ne sais pas, aller voir un psychologue ? #speaker:main_character #portait:main_character_neutral #layout:right #response:neutral
++ Je ne sais pas, aller voir un psychologue ? #speaker:Vous #portrait:main_character_neutral #layout:right #response:neutral
     ->reponseNeutre1 
 
 === finCours ===
 Bon le cours est terminé pour aujourd'hui. #QTEConcentration:10,10
 Je vais vous donner le sujet du projet ! Vous allez devoir programmer un réseau neuronnal avec deux hémisphères ! #speaker:Mr.Champignon #portrait:mr_champignon_neutral #layout:left #response:bad
 
-Quoi mais c'est quoi ce projet ?  #speaker:main_character #portait:main_character_sad #layout:right #response:bad
+Quoi mais c'est quoi ce projet ?  #speaker:Vous #portrait:main_character_sad #layout:right #response:bad
 
 -> DONE
 

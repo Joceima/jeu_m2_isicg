@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
 
     //private static DialogueManager instance;
     public static DialogueManager instance; // pas sûre que je mette dialogue manager en singleton mais pour l'instant ça me semble utile
-    public bool dialogueIsPlaying { get; private set; } // readonly 
+    public bool dialogueIsPlaying = false; // readonly removed  
 
     public bool canContinueToNextLine = false;
     private Coroutine displayLineCoroutine;
@@ -260,9 +260,9 @@ public class DialogueManager : MonoBehaviour
                 case RESPONSE_TAG:
                     Debug.Log("Response: " + tagValue);
                     if (tagValue.ToLower() == "bad")
-                        MotivationManager.instance.RemoveMotivation(15);
+                        MotivationManager.instance.RemoveMotivation(10);
                     else if (tagValue.ToLower() == "good")
-                        MotivationManager.instance.AddMotivation(5);
+                        MotivationManager.instance.AddMotivation(20);
                     break;
 
                 default:
