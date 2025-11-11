@@ -943,7 +943,7 @@ MonoBehaviour:
   Instance: {fileID: 0}
   levelIndex: 1
   startCutsceneIndex: 1
-  inkJSON: {fileID: 4900000, guid: 8e66945fa6c03f54092a8441c3eb6067, type: 3}
+  inkJSON: {fileID: 4900000, guid: d0a86710c709abb44be4e2a661a24ee3, type: 3}
   endCutsceneIndex: 2
 --- !u!1001 &128910923
 PrefabInstance:
@@ -10751,15 +10751,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3368186405073471398, guid: 95c71196aa5702948a1e9c0f0be99246, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.542
+      value: -2.69
       objectReference: {fileID: 0}
     - target: {fileID: 3368186405073471398, guid: 95c71196aa5702948a1e9c0f0be99246, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.214
+      value: -4.15
       objectReference: {fileID: 0}
     - target: {fileID: 3368186405073471398, guid: 95c71196aa5702948a1e9c0f0be99246, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.9
+      value: 6.43
       objectReference: {fileID: 0}
     - target: {fileID: 3368186405073471398, guid: 95c71196aa5702948a1e9c0f0be99246, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11617,12 +11617,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
-    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
-    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
-    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -12620,7 +12615,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   globalVolume: {fileID: 1502696212}
-  decayRate: 0.5
+  decayRate: 1
   autoDecayEnabled: 1
 --- !u!114 &1943605281
 MonoBehaviour:

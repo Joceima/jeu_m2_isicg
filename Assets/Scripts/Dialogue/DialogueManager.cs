@@ -332,10 +332,5 @@ public class DialogueManager : MonoBehaviour
         story = null;
         if(dialoguePanel != null)
             dialoguePanel.SetActive(false);
-
-        dialogueText.text = "";
-        displayNameText.text = "";
-        portraitAnimator.Play("Default");
-        layoutAnimator.Play("right");
     }
 }
