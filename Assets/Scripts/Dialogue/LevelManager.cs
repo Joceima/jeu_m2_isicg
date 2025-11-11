@@ -56,6 +56,10 @@ public class LevelManager : MonoBehaviour
 
         if(inkJSON != null)
         {
+            if (DialogueManager.instance.dialogueIsPlaying)
+            {
+                DialogueManager.instance.ResetDialogue();
+            }
             Debug.Log("Starting Dialogue from Ink JSON: " + inkJSON.name);
             DialogueManager.instance.PlayDialogueAutomatically(inkJSON);
             yield return new WaitUntil(() => !DialogueManager.instance.dialogueIsPlaying);

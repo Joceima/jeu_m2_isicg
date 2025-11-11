@@ -330,6 +330,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Resetting dialogue manager state.");
         dialogueIsPlaying = false;
         story = null;
+        StopAllCoroutines();
         if(dialoguePanel != null)
             dialoguePanel.SetActive(false);
     }
