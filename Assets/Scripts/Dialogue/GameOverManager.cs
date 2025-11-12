@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System.IO;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -9,10 +7,11 @@ public class GameOverManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private Button retryButton;
+    [SerializeField] private Button menuButton;
     [SerializeField] private float restartDelay = 2f;
 
 
-
+    public bool isMenuOpen = false;
     private bool isGameOver = false;
 
     private void Awake()
@@ -36,6 +35,10 @@ public class GameOverManager : MonoBehaviour
         if (retryButton != null)
         {
             retryButton.onClick.AddListener(OnRetryButtonClicked);
+        }
+        if(menuButton != null)
+        {
+            menuButton.onClick.AddListener(ReturnToMainMenu);
         }
     }
 
@@ -74,39 +77,7 @@ public class GameOverManager : MonoBehaviour
         //StartCoroutine(RestartLevelAfterDelay());
     }
 
-    /*
-    private IEnumerator RestartLevelAfterDelay()
-    {
-        yield return new WaitForSecondsRealtime(restartDelay);
-        Time.timeScale = 1f; // Resume the game
 
-        if (GameController.Instance != null)
-        {
-            int currentLevel = GameController.Instance.currentLevelIndex;
-            Debug.Log("Restarting Level: " + currentLevel);
-            GameController.Instance.RestartCurrentLevel();
-        }
-        else
-        {
-            Debug.LogWarning("GameController instance not found. Cannot restart level.");
-        }
-        isGameOver = false;
-    }*/
-
-    /*public void RestartLevel()
-    {
-        Time.timeScale = 1f; // Resume the game
-        if(GameController.Instance != null)
-        {
-            int currentLevel = GameController.Instance.currentLevelIndex;
-            Debug.Log("Restarting Level: " + currentLevel);
-            GameController.Instance.RestartCurrentLevel();
-        } else
-        {
-            Debug.Log("GameController not found");
-        }
-        isGameOver = false;
-    }*/
 
     private void OnRetryButtonClicked()
     {
@@ -134,6 +105,22 @@ public class GameOverManager : MonoBehaviour
         }
         Time.timeScale = 1f; // Resume the game
         isGameOver = false;
+    }
+
+    public void ReturnToMainMenu()
+    {
+        Time.timeScale = 1f; // Resume the game
+        if(MenuManager.Instance != null)
+        {
+            HideGameOver();
+            MenuManager.Instance.PauseGame();
+            GameController.Instance.RestartCurrentLevel(); // Assuming main menu is level 0
+        }
+        else
+        {
+            Debug.LogWarning("MenuManager instance not found. Cannot return to main menu.");
+        }
+        
     }
 
 }
