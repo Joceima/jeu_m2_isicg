@@ -7,8 +7,11 @@ public class GameOverManager : MonoBehaviour
 {
     public static GameOverManager Instance;
 
-    [SerializeField] private Image gameOverImage;
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private Button retryButton;
     [SerializeField] private float restartDelay = 2f;
+
+
 
     private bool isGameOver = false;
 
@@ -25,13 +28,22 @@ public class GameOverManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        if(gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+        if (retryButton != null)
+        {
+            retryButton.onClick.AddListener(RestartLevel);
+        }
     }
 
     private void Start()
     {
-        if(gameOverImage != null)
+        if(gameOverPanel != null)
         {
-            gameOverImage.gameObject.SetActive(false);
+            gameOverPanel.gameObject.SetActive(false);
         }
     }
 
@@ -41,16 +53,17 @@ public class GameOverManager : MonoBehaviour
         isGameOver = true;
         Debug.Log("Game Over triggered.");
 
-        if (gameOverImage != null)
+        if (gameOverPanel != null)
         {
-            gameOverImage.gameObject.SetActive(true);
+            gameOverPanel.gameObject.SetActive(true);
         }
 
         Time.timeScale = 0f; // Pause the game
 
-        StartCoroutine(RestartLevelAfterDelay());
+        //StartCoroutine(RestartLevelAfterDelay());
     }
 
+    /*
     private IEnumerator RestartLevelAfterDelay()
     {
         yield return new WaitForSecondsRealtime(restartDelay);
@@ -67,16 +80,30 @@ public class GameOverManager : MonoBehaviour
             Debug.LogWarning("GameController instance not found. Cannot restart level.");
         }
         isGameOver = false;
+    }*/
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f; // Resume the game
+        if(GameController.Instance != null)
+        {
+            int currentLevel = GameController.Instance.currentLevelIndex;
+            Debug.Log("Restarting Level: " + currentLevel);
+            GameController.Instance.RestartCurrentLevel();
+        } else
+        {
+            Debug.Log("GameController not found");
+        }
+        isGameOver = false;
     }
 
     public void HideGameOver()
     {
-        if(gameOverImage != null)
+        if(gameOverPanel != null)
         {
-            gameOverImage.gameObject.SetActive(false);
+            gameOverPanel.gameObject.SetActive(false);
         }
         Time.timeScale = 1f; // Resume the game
     }
-
 
 }
