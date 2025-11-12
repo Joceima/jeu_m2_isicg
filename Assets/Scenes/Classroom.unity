@@ -7230,7 +7230,7 @@ MonoBehaviour:
   Instance: {fileID: 0}
   levelIndex: 2
   startCutsceneIndex: 3
-  inkJSON: {fileID: 4900000, guid: 8e66945fa6c03f54092a8441c3eb6067, type: 3}
+  inkJSON: {fileID: 4900000, guid: 2b84248edd5a78543aeec57db1518a25, type: 3}
   endCutsceneIndex: 1
 --- !u!4 &1055856373 stripped
 Transform:

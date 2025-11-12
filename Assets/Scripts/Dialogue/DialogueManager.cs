@@ -177,6 +177,7 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
         continueIcon.SetActive(true);
         DisplayChoices();
+        
         canContinueToNextLine = true;
 
         if (autoDialogueMode && story.currentChoices.Count == 0)
@@ -284,6 +285,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayChoices()
     {
+
         List<Choice> currentChoices = story.currentChoices;
 
         if (currentChoices.Count > choices.Length)
