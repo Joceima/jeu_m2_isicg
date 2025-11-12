@@ -943,7 +943,7 @@ MonoBehaviour:
   Instance: {fileID: 0}
   levelIndex: 1
   startCutsceneIndex: 1
-  inkJSON: {fileID: 4900000, guid: d0a86710c709abb44be4e2a661a24ee3, type: 3}
+  inkJSON: {fileID: 4900000, guid: 8e66945fa6c03f54092a8441c3eb6067, type: 3}
   endCutsceneIndex: 2
 --- !u!1001 &128910923
 PrefabInstance:
@@ -4165,7 +4165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.3711, y: 8.0256}
+  m_AnchoredPosition: {x: 2.3710938, y: 8.025574}
   m_SizeDelta: {x: 487.0078, y: 315.9923}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &473782531
@@ -12886,7 +12886,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   globalVolume: {fileID: 1502696212}
-  decayRate: 1
+  decayRate: 0.2
   autoDecayEnabled: 1
 --- !u!114 &1943605281
 MonoBehaviour:

@@ -158,7 +158,7 @@ public class QTEConcentration : QTEBase
         onQTEComplete?.Invoke(success);
 
         if(success)
-            MotivationManager.instance.AddMotivation(10f);
+            MotivationManager.instance.AddMotivation(20f);
         else 
             MotivationManager.instance.RemoveMotivation(10f);
     }

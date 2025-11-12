@@ -262,7 +262,7 @@ public class DialogueManager : MonoBehaviour
                     if (tagValue.ToLower() == "bad")
                         MotivationManager.instance.RemoveMotivation(10);
                     else if (tagValue.ToLower() == "good")
-                        MotivationManager.instance.AddMotivation(20);
+                        MotivationManager.instance.AddMotivation(30);
                     break;
 
                 default:
