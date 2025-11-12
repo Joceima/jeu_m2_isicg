@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
     public bool canContinueToNextLine = false;
     private Coroutine displayLineCoroutine;
     public bool isTyping = false;
+    public float time;
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
@@ -48,6 +49,8 @@ public class DialogueManager : MonoBehaviour
     private const string TIMER_TAG = "timer";
     private const string QTE_TAG = "QTEConcentration";
     private const string RESPONSE_TAG = "response";
+
+
 
     private void Awake()
     {
@@ -230,8 +233,8 @@ public class DialogueManager : MonoBehaviour
                     Debug.Log("Timer: " + tagValue);
                     Debug.Log("Timer value as float: " + float.Parse(tagValue));
                     // Gérer le timer ici
-                    float time = float.Parse(tagValue);
-                    DialogueTimer.instance.StartTimer(time);
+                    time = float.Parse(tagValue);
+                    // DialogueTimer.instance.StartTimer(time);
                     break;
                 case QTE_TAG:
                     Debug.Log("QTE: " + tagValue);
@@ -285,7 +288,11 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayChoices()
     {
-
+        if(time > 0)
+        {
+            DialogueTimer.instance.StartTimer(time);
+        }
+        
         List<Choice> currentChoices = story.currentChoices;
 
         if (currentChoices.Count > choices.Length)
