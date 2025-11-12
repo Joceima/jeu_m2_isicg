@@ -25,7 +25,7 @@ public class MotivationManager : MonoBehaviour
     [SerializeField] private Volume globalVolume;
 
     [Header("Decay Settings")]
-    [SerializeField] private float decayRate = 0.6f; // Motivation decay per second
+    [SerializeField] private float decayRate = 0.7f; // Motivation decay per second
     [SerializeField] private bool autoDecayEnabled = true;
 
     private Bloom bloom;

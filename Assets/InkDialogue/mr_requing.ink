@@ -1,5 +1,4 @@
-Bonjour, est-ce que c'est votre deuxième cours de la journée ?
-#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left
+Bonjour, est-ce que c'est votre deuxième cours de la journée ?#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left
 -> main
 
 === main ===
@@ -26,8 +25,8 @@ Et qu'est-ce que vous avez fait ?  #speaker:Mr.Requing #portrait:mr_requing_neut
 === suiteCoursBis1 ===
 Bon super ! Aujourd'hui, nous allons parler des matériaux blancs.  #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left
 Pourquoi les tableaux sont-il blancs ? #QTEConcentration:8,12
-Pourquoi lorsqu'on doit projeter un film, le support doit-il être blanc ? #QTEConcentration:5,7
-Pourquoi est-ce que la couleur du plastique des prises est-elle blanche ? #QTEConcentration:5,7
+Pourquoi lorsqu'on doit projeter un film, le support doit-il être blanc ? #QTEConcentration:5,10
+Pourquoi est-ce que la couleur du plastique des prises est-elle blanche ? #QTEConcentration:5,10
 Un matériau blanc "réfléchit toutes les couleurs" de la lumière...
 C'est pour cela qu'on l'utilise pour écrire, projeter ou observer. Il ne "déforme pas ce que l'on voit".
 Mais si je remplaçais le tableaux blanc par un tableau rouge...
@@ -42,9 +41,9 @@ Que se passerait-il si on projette une image au tableau ?
 === suiteCoursBis2 ===
 Bon en réalité, ce n'est pas le cours d'aujourd'hui. C'était pour rigoler !#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left
 Aujourd'hui, nous allons parler d'un phénomène moderne : le Brain rot !
-Ce n'est pas une maladie, même si notre cerveau pourrait mériter une ordonnance.#QTEConcentration:10,7
+Ce n'est pas une maladie, même si notre cerveau pourrait mériter une ordonnance.#QTEConcentration:10,9
 Ahhh c'est quand votre esprit souhaite rester sur le plaisir instantannée.
-C'est aussi quand votre esprit devient une vidéo en boucle de 7 secondes...#QTEConcentration:10,7
+C'est aussi quand votre esprit devient une vidéo en boucle de 7 secondes...#QTEConcentration:10,9
 Ce n'est pas moi qui l'affirme mais mon cher ami ChatGPT !
 Comment est-ce que vous définissez le Brain Rot ?
 + C'est quand notre cerveau devient une bouillie. #response:good #speaker:Vous #portrait:main_character_neutral #layout:right 
@@ -72,16 +71,16 @@ Faut-il vraiment supprimer l'activité du scrolling ?
 === suiteCoursBis4 ===
 Réponse très intéressante, tout dépend du point de vue et de l'antécédents de l'individu.#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left #QTEConcentration:10,7
 Bon félication, vous avez pu réussir à suivre les cours d'aujourd'hui !
-Mais mauvaise nouvelle, je vous donne votre sujet de projet. #QTEConcentration:7,7
+Mais mauvaise nouvelle, je vous donne votre sujet de projet. #QTEConcentration:7,15
 L'objectif du projet est d'entrainer un réseau de neurones qui oublie une partie de ce qu'il apprend toutes les 7 secondes.
 Il redécouvre sans cesse les mêmes données et croit qu'elles sont nouvelles.
 Ce réseau doit garder les informations qui sont "plaisantes".#QTEConcentration:7,15
-Bon normalement, vous avez tous les éléments, le projet est à rendre pour mercredi prochain ! 
+Bon normalement, vous avez tous les éléments, le projet est à rendre pour vendredi prochain ! 
 
 Ahh mais qu'est-ce qu'il raconte ?! #speaker:Vous #portrait:main_character_sad #layout:right 
 
 
-Je dois vous prévenir, que je ne serai pas là la semaine prochaine ! 
+Je dois vous prévenir, que je ne serai pas là la semaine prochaine ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
 Bon, je vous dis au-revoir ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
 
 A bientot ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 

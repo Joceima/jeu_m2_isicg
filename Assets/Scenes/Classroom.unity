@@ -16178,7 +16178,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   globalVolume: {fileID: 1502696212}
-  decayRate: 0.6
+  decayRate: 0.7
   autoDecayEnabled: 1
 --- !u!114 &1943605282
 MonoBehaviour:
