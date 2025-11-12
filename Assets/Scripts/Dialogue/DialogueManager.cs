@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine.InputSystem;
@@ -35,7 +35,7 @@ public class DialogueManager : MonoBehaviour
     private Story story;
 
     //private static DialogueManager instance;
-    public static DialogueManager instance; // pas sûre que je mette dialogue manager en singleton mais pour l'instant ça me semble utile
+    public static DialogueManager instance; // pas sÃ»re que je mette dialogue manager en singleton mais pour l'instant Ã§a me semble utile
     public bool dialogueIsPlaying = false; // readonly removed  
 
     public bool canContinueToNextLine = false;
@@ -116,7 +116,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
-        displayNameText.text = "???"; // nom par défaut au début du dialogue
+        displayNameText.text = "???"; // nom par dÃ©faut au dÃ©but du dialogue
         portraitAnimator.Play("Default");
         layoutAnimator.Play("right");
 
@@ -125,7 +125,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()
     {
-        yield return new WaitForSeconds(0.4f); // permet de s'assurer que toutes les actions de fin de dialogue sont terminées avant de fermer le panneau
+        yield return new WaitForSeconds(0.4f); // permet de s'assurer que toutes les actions de fin de dialogue sont terminÃ©es avant de fermer le panneau
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -216,29 +216,29 @@ public class DialogueManager : MonoBehaviour
             {
                 case SPEAKER_TAG:
                     Debug.Log("Speaker: " + tagValue);
-                    // Gérer le changement de locuteur ici
+                    // GÃ©rer le changement de locuteur ici
                     displayNameText.text = tagValue;
                     break;
                 case PORTRAIT_TAG:
                     Debug.Log("Portrait: " + tagValue);
-                    // Gérer le changement de portrait ici
+                    // GÃ©rer le changement de portrait ici
                     portraitAnimator.Play(tagValue); //
                     break;
                 case LAYOUT_TAG:
                     Debug.Log("Layout: " + tagValue);
-                    // Gérer le changement de mise en page ici
+                    // GÃ©rer le changement de mise en page ici
                     layoutAnimator.Play(tagValue);
                     break;
                 case TIMER_TAG:
                     Debug.Log("Timer: " + tagValue);
                     Debug.Log("Timer value as float: " + float.Parse(tagValue));
-                    // Gérer le timer ici
+                    // GÃ©rer le timer ici
                     time = float.Parse(tagValue);
                     // DialogueTimer.instance.StartTimer(time);
                     break;
                 case QTE_TAG:
                     Debug.Log("QTE: " + tagValue);
-                    // Gérer le QTE ici
+                    // GÃ©rer le QTE ici
                     string[] qteParams = tagValue.Split(',');
                     if (qteParams.Length != 2)
                     {
@@ -247,7 +247,7 @@ public class DialogueManager : MonoBehaviour
                     }
                     float qteDuration = float.Parse(qteParams[0].Trim());
                     int qteTargetCount = int.Parse(qteParams[1].Trim());
-                    // peut être mettre le dialogue en pause
+                    // peut Ãªtre mettre le dialogue en pause
 
                     QTEManager.Instance.StartQTE("concentration", qteDuration, qteTargetCount, success =>
                     {
@@ -258,7 +258,7 @@ public class DialogueManager : MonoBehaviour
                         {
                             Debug.Log("QTE failed.");
                         }
-                        // suite du dialogue après le QTE ?
+                        // suite du dialogue aprÃ¨s le QTE ?
                     });
                     break;
                 case RESPONSE_TAG:
@@ -288,18 +288,24 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayChoices()
     {
-        if(time > 0)
+        List<Choice> currentChoices = story.currentChoices;
+
+        if (currentChoices.Count == 0)
+        {
+            // Aucune option Ã  afficher, ne dÃ©marre pas le timer
+            return;
+        }
+
+        if (time > 0)
         {
             DialogueTimer.instance.StartTimer(time);
         }
-        
-        List<Choice> currentChoices = story.currentChoices;
 
         if (currentChoices.Count > choices.Length)
         {
             Debug.LogError("More choices were given than the UI can support. Number of choices given: " + currentChoices.Count);
-
         }
+
         int index = 0;
         foreach (Choice choice in currentChoices)
         {
@@ -307,7 +313,7 @@ public class DialogueManager : MonoBehaviour
             choicesText[index].text = choice.text;
             index++;
         }
-        for(int i = index; i < choices.Length; i++)
+        for (int i = index; i < choices.Length; i++)
         {
             choices[i].gameObject.SetActive(false);
         }
@@ -328,7 +334,7 @@ public class DialogueManager : MonoBehaviour
         {
             story.ChooseChoiceIndex(choiceIndex);
             DisplayChoices();
-            // problème ici
+            // problÃ¨me ici
             ContinueStory();
         }
     }

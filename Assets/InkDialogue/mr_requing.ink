@@ -25,7 +25,7 @@ Et qu'est-ce que vous avez fait ?  #speaker:Mr.Requing #portrait:mr_requing_neut
 
 === suiteCoursBis1 ===
 Bon super ! Aujourd'hui, nous allons parler des matériaux blancs.  #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left
-Pourquoi les tableaux sont-il blancs ? #QTEConcentration:5,7
+Pourquoi les tableaux sont-il blancs ? #QTEConcentration:8,12
 Pourquoi lorsqu'on doit projeter un film, le support doit-il être blanc ? #QTEConcentration:5,7
 Pourquoi est-ce que la couleur du plastique des prises est-elle blanche ? #QTEConcentration:5,7
 Un matériau blanc "réfléchit toutes les couleurs" de la lumière...
@@ -57,10 +57,10 @@ Comment est-ce que vous définissez le Brain Rot ?
 === suiteCoursBis3 ===
 On peut le définir comme ça oui. Chaque génération a son propre problème et difficulté malheureusement. #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left
 Certains diraient "on était plus intelligent avant" ou "c'était plus simple". #QTEConcentration:10,7
-Mais chaque difficulté est jugée différement en fonction de nos antécédents et l'environnement où l'on a grandi. #QTEConcentration:10,7
+Mais chaque difficulté est jugée différement en fonction de nos antécédents et l'environnement où l'on a grandi. #QTEConcentration:10,16
 Le "avant" pouvait être très difficile ou très facile pour un autre. #QTEConcentration:10,7
 C'est vrai que votre difficulté actuelle est de ne pas vous noyez dans cette masse d'information. 
-C'est quelques choses en effet, qui est tout nouveau pour l'espèce humaine. #QTEConcentration:10,7
+C'est quelques choses en effet, qui est tout nouveau pour l'espèce humaine. #QTEConcentration:10,20
 Faut-il vraiment supprimer l'activité du scrolling ?
 + Pas vraiment, la réduire peut-être #speaker:Vous #portrait:main_character_neutral #layout:right 
 -> suiteCoursBis4
@@ -72,13 +72,19 @@ Faut-il vraiment supprimer l'activité du scrolling ?
 === suiteCoursBis4 ===
 Réponse très intéressante, tout dépend du point de vue et de l'antécédents de l'individu.#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left #QTEConcentration:10,7
 Bon félication, vous avez pu réussir à suivre les cours d'aujourd'hui !
-Mais mauvaise nouvelle, je vous donne votre sujet de projet. #QTEConcentration:10,7
+Mais mauvaise nouvelle, je vous donne votre sujet de projet. #QTEConcentration:7,7
 L'objectif du projet est d'entrainer un réseau de neurones qui oublie une partie de ce qu'il apprend toutes les 7 secondes.
 Il redécouvre sans cesse les mêmes données et croit qu'elles sont nouvelles.
-Ce réseau doit garder les informations qui sont "plaisantes".#QTEConcentration:10,7
+Ce réseau doit garder les informations qui sont "plaisantes".#QTEConcentration:7,15
 Bon normalement, vous avez tous les éléments, le projet est à rendre pour mercredi prochain ! 
 
 Ahh mais qu'est-ce qu'il raconte ?! #speaker:Vous #portrait:main_character_sad #layout:right 
+
+
+Je dois vous prévenir, que je ne serai pas là la semaine prochaine ! 
+Bon, je vous dis au-revoir ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
+
+A bientot ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
 
 ->DONE
 
