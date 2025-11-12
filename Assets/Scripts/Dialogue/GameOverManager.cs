@@ -35,23 +35,34 @@ public class GameOverManager : MonoBehaviour
         }
         if (retryButton != null)
         {
-            retryButton.onClick.AddListener(RestartLevel);
+            retryButton.onClick.AddListener(OnRetryButtonClicked);
         }
     }
 
+    /*
     private void Start()
     {
         if(gameOverPanel != null)
         {
             gameOverPanel.gameObject.SetActive(false);
         }
-    }
+    }*/
 
     public void TriggerGameOver()
     {
         if (isGameOver) return;
         isGameOver = true;
         Debug.Log("Game Over triggered.");
+
+        if (GameController.Instance != null)
+        {
+            int currentLevel = GameController.Instance.currentLevelIndex;
+            if(currentLevel >=0 && currentLevel < GameController.Instance.levels.Length)
+            {
+                GameController.Instance.levels[currentLevel].StopAllCoroutines();
+            }
+                
+        }
 
         if (gameOverPanel != null)
         {
@@ -82,7 +93,7 @@ public class GameOverManager : MonoBehaviour
         isGameOver = false;
     }*/
 
-    public void RestartLevel()
+    /*public void RestartLevel()
     {
         Time.timeScale = 1f; // Resume the game
         if(GameController.Instance != null)
@@ -95,6 +106,24 @@ public class GameOverManager : MonoBehaviour
             Debug.Log("GameController not found");
         }
         isGameOver = false;
+    }*/
+
+    private void OnRetryButtonClicked()
+    {
+        Debug.Log("Retry button clicked.");
+        if(GameController.Instance != null)
+        {
+            int currentLevel = GameController.Instance.currentLevelIndex;
+            gameOverPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f; // Resume the game
+            isGameOver = false;
+            GameController.Instance.RestartCurrentLevel();
+        }
+        else
+        {
+                        Debug.LogWarning("GameController instance not found. Cannot restart level.");
+        
+        }
     }
 
     public void HideGameOver()
@@ -104,6 +133,7 @@ public class GameOverManager : MonoBehaviour
             gameOverPanel.gameObject.SetActive(false);
         }
         Time.timeScale = 1f; // Resume the game
+        isGameOver = false;
     }
 
 }

@@ -4,7 +4,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance;
 
-    [SerializeField] private LevelManager[] levels;
+    [SerializeField] public LevelManager[] levels;
     public int currentLevelIndex;
 
     private void Awake()
@@ -12,28 +12,32 @@ public class GameController : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         } else
         {
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(gameObject);
+        
     }
 
     private void Start()
     {
-        StartLevel(0);
+        currentLevelIndex = 0;
+        StartLevel(currentLevelIndex);
     }
 
     public void StartLevel(int levelIndex)
     {
         for (int i = 0; i < levels.Length; i++)
         {
-            levels[i].gameObject.SetActive(i == levelIndex);
+            if (levels[i] != null)
+                levels[i].gameObject.SetActive(i == levelIndex);
         }
 
-        if (levelIndex < levels.Length)
+        if (levelIndex < levels.Length && levels[levelIndex] != null)
         {
+            currentLevelIndex = levelIndex;
             levels[levelIndex].StartLevelSequence();
         }
     }
@@ -68,7 +72,21 @@ public class GameController : MonoBehaviour
         {
             DialogueManager.instance.ResetDialogue();
         }
-        levels[currentLevelIndex].StopAllCoroutines();
-        levels[currentLevelIndex].StartLevelSequence();
+        //levels[currentLevelIndex].StopAllCoroutines();
+        //levels[currentLevelIndex].StartLevelSequence();
+        foreach(var level in levels)
+        {
+            if(level != null)
+            {
+                level.StopAllCoroutines();
+                level.gameObject.SetActive(false);
+            }
+        }
+        StartLevel(currentLevelIndex);
+    }
+
+    public void StopLevelSequence()
+    {
+        StopAllCoroutines();
     }
 }

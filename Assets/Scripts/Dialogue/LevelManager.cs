@@ -85,6 +85,6 @@ public class LevelManager : MonoBehaviour
         }
         isRestarting = false;
         Debug.Log($"Level {levelIndex} complete, notifying GameController...");
-        GameController.Instance.OnLevelComplete(levelIndex);
+        //GameController.Instance.OnLevelComplete(levelIndex);
     }
 }
