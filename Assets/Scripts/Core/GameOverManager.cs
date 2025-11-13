@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,11 +9,13 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private Button retryButton;
     [SerializeField] private Button menuButton;
-    [SerializeField] private float restartDelay = 2f;
+    [SerializeField] private float restartDelay = 0.5f;
 
+    private float faceDuration = 1f;
 
     public bool isMenuOpen = false;
     private bool isGameOver = false;
+
 
     private void Awake()
     {
@@ -51,6 +54,8 @@ public class GameOverManager : MonoBehaviour
         }
     }*/
 
+
+
     public void TriggerGameOver()
     {
         if (isGameOver) return;
@@ -67,16 +72,31 @@ public class GameOverManager : MonoBehaviour
                 
         }
 
+        StartCoroutine(ShowGameOverAfterDelay());
+
+        /*
         if (gameOverPanel != null)
         {
+
             gameOverPanel.gameObject.SetActive(true);
-        }
+        }*/
 
         Time.timeScale = 0f; // Pause the game
 
         //StartCoroutine(RestartLevelAfterDelay());
+
     }
 
+    private IEnumerator ShowGameOverAfterDelay()
+    {
+
+       yield return new WaitForSecondsRealtime(restartDelay);
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.gameObject.SetActive(true);
+        }
+        Time.timeScale = 0f; // Pause the game
+    }
 
 
     private void OnRetryButtonClicked()
@@ -114,7 +134,7 @@ public class GameOverManager : MonoBehaviour
         {
             HideGameOver();
             MenuManager.Instance.PauseGame();
-            GameController.Instance.RestartCurrentLevel(); // Assuming main menu is level 0
+            GameController.Instance.RestartCurrentLevel(); 
         }
         else
         {

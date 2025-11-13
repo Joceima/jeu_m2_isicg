@@ -137,6 +137,7 @@ public class MotivationManager : MonoBehaviour
         //UpdateFog();
         if (currentMotivation <= minMotivation)
         {
+            
             GameOverManager.Instance.TriggerGameOver();
         }
 

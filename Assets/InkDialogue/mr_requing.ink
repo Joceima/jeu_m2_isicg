@@ -75,12 +75,12 @@ Mais mauvaise nouvelle, je vous donne votre sujet de projet. #QTEConcentration:7
 L'objectif du projet est d'entrainer un réseau de neurones qui oublie une partie de ce qu'il apprend toutes les 7 secondes.
 Il redécouvre sans cesse les mêmes données et croit qu'elles sont nouvelles.
 Ce réseau doit garder les informations qui sont "plaisantes".#QTEConcentration:7,20
-Bon normalement, vous avez tous les éléments, le projet est à rendre pour vendredi prochain ! 
+Bon normalement, vous avez tous les éléments, le projet est à rendre dans deux semaines ! 
 
 Ahh mais qu'est-ce qu'il raconte ?! #speaker:Vous #portrait:main_character_sad #layout:right 
 
 
-Je dois vous prévenir, que je ne serai pas là la semaine prochaine ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
+Je dois vous prévenir, que je ne serai pas là la semaine prochaine ! Cela vous fait plus de temps pour le projet !#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
 Bon, je vous dis au-revoir ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
 
 A bientot ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 

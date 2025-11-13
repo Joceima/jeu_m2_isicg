@@ -639,7 +639,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -3446,7 +3451,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -3717,6 +3727,8 @@ PlayableDirector:
     value: {fileID: 84602272}
   - key: {fileID: -135310266539628870, guid: f787ef7c4766489488d7178cc59c9bec, type: 2}
     value: {fileID: 1783254882}
+  - key: {fileID: -549023170670000165, guid: f787ef7c4766489488d7178cc59c9bec, type: 2}
+    value: {fileID: 830764152}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &409440554 stripped
@@ -4282,6 +4294,8 @@ PlayableDirector:
     value: {fileID: 1783254882}
   - key: {fileID: 7252330491864597611, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
     value: {fileID: 1612851431}
+  - key: {fileID: 4696992559680341204, guid: 7015598a2aa3f494b9e8b9eef2865bde, type: 2}
+    value: {fileID: 830764152}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &444482910
@@ -7467,6 +7481,135 @@ Transform:
   - {fileID: 1612851430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &830764151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 830764153}
+  - component: {fileID: 830764152}
+  m_Layer: 0
+  m_Name: Audio Source Hamster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &830764152
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830764151}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: bb59483c1abec4f41881b66f9c8a09d5, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &830764153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830764151}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 79.20314, y: 6.25219, z: 5.70415}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &834806150 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7221201311184852573, guid: 95c71196aa5702948a1e9c0f0be99246, type: 3}
@@ -8687,7 +8830,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -10568,6 +10716,8 @@ PlayableDirector:
     value: {fileID: 1612851431}
   - key: {fileID: -6671120630394353651, guid: 735bd179ca85f1b499979d5e7d103b7f, type: 2}
     value: {fileID: 1612851431}
+  - key: {fileID: 4854712695914020294, guid: 735bd179ca85f1b499979d5e7d103b7f, type: 2}
+    value: {fileID: 830764152}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1366674416 stripped
@@ -14937,7 +15087,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -15180,7 +15335,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -16754,7 +16914,12 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
+    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
+    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
+    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -17283,6 +17448,8 @@ PlayableDirector:
     value: {fileID: 462970349}
   - key: {fileID: -4099362774279203472, guid: 9209343651c93f246b4e591140948220, type: 2}
     value: {fileID: 462970344}
+  - key: {fileID: 4738307795953270337, guid: 9209343651c93f246b4e591140948220, type: 2}
+    value: {fileID: 830764152}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &2121354337 stripped
@@ -17629,6 +17796,7 @@ SceneRoots:
   - {fileID: 54584446}
   - {fileID: 251936432}
   - {fileID: 1491687095}
+  - {fileID: 830764153}
   - {fileID: 1691183726}
   - {fileID: 1324651017}
   - {fileID: 1399000521}
