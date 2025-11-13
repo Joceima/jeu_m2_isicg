@@ -639,12 +639,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
-    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
-    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
-    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -3451,12 +3446,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
-    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
-    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
-    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -8697,12 +8687,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
-    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
-    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
-    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -9148,7 +9133,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e62045d74cd1c5b41bb20fbf8f8488f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 101d24d0f4a3af842aacc76be91064a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14952,12 +14937,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
-    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
-    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
-    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -15200,12 +15180,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
-    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
-    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
-    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -16779,12 +16754,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'rig:LeftFoot'\n\tTransform 'rig:LeftHandIndex3'\n\tTransform
-    'rig:RightHand'\n\tTransform 'rig:LeftArm'\n\tTransform 'rig:LeftHandIndex2'\n\tTransform
-    'rig:LeftHandThumb1'\n\tTransform 'rig:Neck'\n\tTransform 'rig:LeftShoulder'\n\tTransform
-    'rig:LeftLeg'\n\tTransform 'rig:LeftHandIndex1'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0

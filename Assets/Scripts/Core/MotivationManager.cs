@@ -107,7 +107,7 @@ public class MotivationManager : MonoBehaviour
         if (vignette != null)
         {
             //Debug.Log("Updating vignette intensity to " + 0.5f * Mathf.Lerp(0.3f, 0.6f, fogIntensity));
-            vignette.intensity.value = 1.1f * Mathf.Lerp(0.3f, 0.6f, fogIntensity);
+            vignette.intensity.value = 1.5f * Mathf.Lerp(0.3f, 0.6f, fogIntensity);
         }
     }
 
