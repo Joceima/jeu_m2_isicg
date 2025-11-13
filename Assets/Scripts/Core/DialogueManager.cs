@@ -281,6 +281,7 @@ public class DialogueManager : MonoBehaviour
     {
         if(story.currentChoices.Count > 0)
         {
+            DialogueTimer.instance.EndTimer();
             story.ChooseChoiceIndex(story.currentChoices.Count - 1);
             ContinueStory();
         }

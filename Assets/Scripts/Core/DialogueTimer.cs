@@ -49,6 +49,15 @@ public class DialogueTimer : MonoBehaviour
         }*/
     }
 
+    public void EndTimer()
+    {
+        timerIsRunning = false;
+        if (timerSlider != null)
+            timerSlider.gameObject.SetActive(false);
+
+    }
+
+
     private void Update()
     {
         if (!timerIsRunning) return;

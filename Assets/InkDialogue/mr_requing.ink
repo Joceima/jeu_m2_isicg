@@ -24,7 +24,7 @@ Et qu'est-ce que vous avez fait ?  #speaker:Mr.Requing #portrait:mr_requing_neut
 
 === suiteCoursBis1 ===
 Bon super ! Aujourd'hui, nous allons parler des matériaux blancs.  #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left
-Pourquoi les tableaux sont-il blancs ? #QTEConcentration:8,12
+Pourquoi les tableaux sont-il blancs ? #QTEConcentration:8,7
 Pourquoi lorsqu'on doit projeter un film, le support doit-il être blanc ? #QTEConcentration:5,10
 Pourquoi est-ce que la couleur du plastique des prises est-elle blanche ? #QTEConcentration:5,10
 Un matériau blanc "réfléchit toutes les couleurs" de la lumière...

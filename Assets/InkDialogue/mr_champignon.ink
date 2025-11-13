@@ -20,7 +20,7 @@ Parfois, les pensées sont tellement forte, que les évènements deviennent rée
 Les évènements deviennent réels car le cerveau croit tellement à ces histoires fictives, qu'inconsciamment, l'humain reproduit les actions négatives qu'ils imaginent.#QTEConcentration:6,5
 L'humain est en quelques soit maudit par sa propre pensée... #portrait:mr_champignon_sad
 Mais il y a des solutions ! Qu'est-ce tu souhaites proposer ? #timer:5
-+ Réagir de manière positive en acceptant le présent quelques soient la gravité de l'évènement. #speaker:Vous #portrait:main_character_neutral #layout:right #response:good
++ [Réagir de manière positive] Réagir de manière positive en acceptant le présent quelques soient la gravité de l'évènement. #speaker:Vous #portrait:main_character_neutral #layout:right #response:good
     ->bonneReponse2
 + Labotomiser notre cerveau. #speaker:Vous #portrait:main_character_neutral #layout:right #response:bad
     ->mauvaiseReponse3
