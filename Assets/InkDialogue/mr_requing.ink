@@ -41,9 +41,9 @@ Que se passerait-il si on projette une image au tableau ?
 === suiteCoursBis2 ===
 Bon en réalité, ce n'est pas le cours d'aujourd'hui. C'était pour rigoler !#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left
 Aujourd'hui, nous allons parler d'un phénomène moderne : le Brain rot !
-Ce n'est pas une maladie, même si notre cerveau pourrait mériter une ordonnance.#QTEConcentration:10,9
+Ce n'est pas une maladie, même si notre cerveau pourrait mériter une ordonnance.#QTEConcentration:10,11
 Ahhh c'est quand votre esprit souhaite rester sur le plaisir instantannée.
-C'est aussi quand votre esprit devient une vidéo en boucle de 7 secondes...#QTEConcentration:10,9
+C'est aussi quand votre esprit devient une vidéo en boucle de 7 secondes...#QTEConcentration:10,15
 Ce n'est pas moi qui l'affirme mais mon cher ami ChatGPT !
 Comment est-ce que vous définissez le Brain Rot ?
 + C'est quand notre cerveau devient une bouillie. #response:good #speaker:Vous #portrait:main_character_neutral #layout:right 
@@ -57,7 +57,7 @@ Comment est-ce que vous définissez le Brain Rot ?
 On peut le définir comme ça oui. Chaque génération a son propre problème et difficulté malheureusement. #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left
 Certains diraient "on était plus intelligent avant" ou "c'était plus simple". #QTEConcentration:10,7
 Mais chaque difficulté est jugée différement en fonction de nos antécédents et l'environnement où l'on a grandi. #QTEConcentration:10,16
-Le "avant" pouvait être très difficile ou très facile pour un autre. #QTEConcentration:10,7
+Le "avant" pouvait être très difficile ou très facile pour un autre. #QTEConcentration:10,15
 C'est vrai que votre difficulté actuelle est de ne pas vous noyez dans cette masse d'information. 
 C'est quelques choses en effet, qui est tout nouveau pour l'espèce humaine. #QTEConcentration:10,20
 Faut-il vraiment supprimer l'activité du scrolling ?
@@ -69,12 +69,12 @@ Faut-il vraiment supprimer l'activité du scrolling ?
 -> suiteCoursBis4
 
 === suiteCoursBis4 ===
-Réponse très intéressante, tout dépend du point de vue et de l'antécédents de l'individu.#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left #QTEConcentration:10,7
+Réponse très intéressante, tout dépend du point de vue et de l'antécédents de l'individu.#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left #QTEConcentration:10,15
 Bon félication, vous avez pu réussir à suivre les cours d'aujourd'hui !
 Mais mauvaise nouvelle, je vous donne votre sujet de projet. #QTEConcentration:7,15
 L'objectif du projet est d'entrainer un réseau de neurones qui oublie une partie de ce qu'il apprend toutes les 7 secondes.
 Il redécouvre sans cesse les mêmes données et croit qu'elles sont nouvelles.
-Ce réseau doit garder les informations qui sont "plaisantes".#QTEConcentration:7,15
+Ce réseau doit garder les informations qui sont "plaisantes".#QTEConcentration:7,20
 Bon normalement, vous avez tous les éléments, le projet est à rendre pour vendredi prochain ! 
 
 Ahh mais qu'est-ce qu'il raconte ?! #speaker:Vous #portrait:main_character_sad #layout:right 

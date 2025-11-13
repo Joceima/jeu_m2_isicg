@@ -333,6 +333,8 @@ public class DialogueManager : MonoBehaviour
     {
         if(canContinueToNextLine)
         {
+            DialogueTimer.instance.EndTimer();
+            DialogueTimer.instance.timerIsRunning = false;
             story.ChooseChoiceIndex(choiceIndex);
             DisplayChoices();
             // problème ici
