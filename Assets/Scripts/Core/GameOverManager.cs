@@ -72,14 +72,14 @@ public class GameOverManager : MonoBehaviour
                 
         }
 
-        StartCoroutine(ShowGameOverAfterDelay());
+        //StartCoroutine(ShowGameOverAfterDelay());
 
-        /*
+        
         if (gameOverPanel != null)
         {
 
             gameOverPanel.gameObject.SetActive(true);
-        }*/
+        }
 
         Time.timeScale = 0f; // Pause the game
 

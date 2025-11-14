@@ -61,11 +61,11 @@ Le "avant" pouvait être très difficile ou très facile pour un autre. #QTEConc
 C'est vrai que votre difficulté actuelle est de ne pas vous noyez dans cette masse d'information. 
 C'est quelques choses en effet, qui est tout nouveau pour l'espèce humaine. #QTEConcentration:10,20
 Faut-il vraiment supprimer l'activité du scrolling ?
-+ Pas vraiment, la réduire peut-être #speaker:Vous #portrait:main_character_neutral #layout:right 
++ Pas vraiment, la réduire peut-être #speaker:Vous #portrait:main_character_neutral #layout:right #response:good 
 -> suiteCoursBis4
-+ Il faut apprendre à vivre avec, sans d'y perdre #speaker:Vous #portrait:main_character_neutral #layout:right 
++ Il faut apprendre à vivre avec, sans d'y perdre #speaker:Vous #portrait:main_character_neutral #layout:right #response:good 
 -> suiteCoursBis4
-+ Non, j'ai besoin de l'omerta chinoise. #speaker:Vous #portrait:main_character_neutral #layout:right 
++ Non, j'ai besoin de l'omerta chinoise. #speaker:Vous #portrait:main_character_neutral #layout:right #response:good 
 -> suiteCoursBis4
 
 === suiteCoursBis4 ===
