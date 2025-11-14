@@ -86,8 +86,8 @@ public class GameController : MonoBehaviour
         StartLevel(currentLevelIndex);
     }
 
-    public void StopLevelSequence()
+    /*public void StopLevelSequence()
     {
         
-    }
+    }*/
 }

@@ -70,17 +70,17 @@ Faut-il vraiment supprimer l'activité du scrolling ?
 
 === suiteCoursBis4 ===
 Réponse très intéressante, tout dépend du point de vue et de l'antécédents de l'individu.#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left #QTEConcentration:10,15
-Bon félication, vous avez pu réussir à suivre les cours d'aujourd'hui !
+Bon félication, vous avez pu réussir à suivre les cours d'aujourd'hui !#response:good
 Mais mauvaise nouvelle, je vous donne votre sujet de projet. #QTEConcentration:7,15
-L'objectif du projet est d'entrainer un réseau de neurones qui oublie une partie de ce qu'il apprend toutes les 7 secondes.
+L'objectif du projet est d'entrainer un réseau de neurones qui oublie une partie de ce qu'il apprend toutes les 7 secondes.#response:good 
 Il redécouvre sans cesse les mêmes données et croit qu'elles sont nouvelles.
 Ce réseau doit garder les informations qui sont "plaisantes".#QTEConcentration:7,20
-Bon normalement, vous avez tous les éléments, le projet est à rendre dans deux semaines ! 
+Bon normalement, vous avez tous les éléments, le projet est à rendre dans deux semaines ! #response:good 
 
 Ahh mais qu'est-ce qu'il raconte ?! #speaker:Vous #portrait:main_character_sad #layout:right 
 
 
-Je dois vous prévenir, que je ne serai pas là la semaine prochaine ! Cela vous fait plus de temps pour le projet !#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
+Je dois vous prévenir, que je ne serai pas là la semaine prochaine ! Cela vous fait plus de temps pour le projet !#speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left #response:good 
 Bon, je vous dis au-revoir ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
 
 A bientot ! #speaker:Mr.Requing #portrait:mr_requing_neutral #layout:left 
