@@ -345,11 +345,33 @@ public class DialogueManager : MonoBehaviour
 
     public void ResetDialogue()
     {
-        Debug.Log("Resetting dialogue manager state.");
+        /*Debug.Log("Resetting dialogue manager state.");
         dialogueIsPlaying = false;
         story = null;
+        dialogueText.text = "";
         StopAllCoroutines();
         if(dialoguePanel != null)
-            dialoguePanel.SetActive(false);
+            dialoguePanel.SetActive(false);*/
+
+        if (displayLineCoroutine != null)
+        {
+            StopCoroutine(displayLineCoroutine);
+        }
+
+        dialogueIsPlaying = false;
+        canContinueToNextLine = false;
+        isTyping = false;
+
+        dialogueText.text = "";
+        displayNameText.text = "";
+
+        foreach (GameObject choice in choices)
+        {
+            choice.SetActive(false);
+        }
+
+        continueIcon.SetActive(false);
+        story = null;
+        dialoguePanel.SetActive(false);
     }
 }

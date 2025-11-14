@@ -83,20 +83,10 @@ public class GameOverManager : MonoBehaviour
 
         Time.timeScale = 0f; // Pause the game
 
-        //StartCoroutine(RestartLevelAfterDelay());
 
     }
 
-    private IEnumerator ShowGameOverAfterDelay()
-    {
-
-       yield return new WaitForSecondsRealtime(restartDelay);
-        if (gameOverPanel != null)
-        {
-            gameOverPanel.gameObject.SetActive(true);
-        }
-        Time.timeScale = 0f; // Pause the game
-    }
+ 
 
 
     private void OnRetryButtonClicked()

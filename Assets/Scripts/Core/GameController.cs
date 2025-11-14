@@ -59,6 +59,7 @@ public class GameController : MonoBehaviour
     public void RestartCurrentLevel()
     {
         Debug.Log("Restarting Level: " + currentLevelIndex);
+        Time.timeScale = 1f;
         if(GameOverManager.Instance != null)
         {
             GameOverManager.Instance.HideGameOver();
@@ -78,7 +79,7 @@ public class GameController : MonoBehaviour
         {
             if(level != null)
             {
-                level.StopAllCoroutines();
+                //level.StopAllCoroutines();
                 level.gameObject.SetActive(false);
             }
         }
@@ -87,6 +88,6 @@ public class GameController : MonoBehaviour
 
     public void StopLevelSequence()
     {
-        StopAllCoroutines();
+        
     }
 }

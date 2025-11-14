@@ -32,6 +32,13 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(RunLevelSequence());
     }
 
+    public void StopLevelSequence()
+    {
+        StopAllCoroutines();
+        Debug.Log($"Level Sequence for Level {levelIndex} stopped.");
+    }
+
+
     private IEnumerator RunLevelSequence()
     {
         Debug.Log("Starting Level Sequence for Level: " + levelIndex);
